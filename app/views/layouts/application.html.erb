@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NaganoCake</title>
+    <title>ながのCake</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,70 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <span class="header-logo">ながのCake</span>
+        <ul class="nav navbar-nav navbar-right nav-hover">
+          <% if customer_signed_in?%>
+            <li class="nav-item nav-name">
+              <span>ようこそ<%= current_customer.email %>さん</span>
+            </li>
+            <li class="nav-item">
+              <%= link_to do %>
+                <span>マイページ</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to public_products_path do %>
+                <span>商品一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to do %>
+                <span>カート</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_customer_session_path, method: :delete do %>
+                <span>ログアウト</span>
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to about_path do %>
+                <span>About</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to public_products_path do %>
+                <span>商品一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_customer_registration_path do %>
+                <span>新規登録</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_customer_session_path do %>
+                <span>ログイン</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+      <%= link_to 'カートアイテム一覧', public_cart_items_path %>
+      <%= link_to '注文情報入力', new_public_order_path %>
+      <%= yield %>
+    </div>
+
+    <footer>
+      <p>Footer!!!!</p>
+    </footer>
   </body>
 </html>
