@@ -3,14 +3,19 @@ Rails.application.routes.draw do
 
   devise_for :customers
   devise_for :admins, controllers: {
-    sessions: 'admins/sessions'
+    sessions: 'admins/sessions',
+    passwords:     'admins/passwords',
+    registrations: 'admins/registrations'
   }
 
   get 'about' => 'homes#about'
 
+
+
   namespace :admin do
   	resources :products
     resources :genres, only: [:index, :create, :update, :edit]
+    get 'top' => 'top#top'
   end
 
   namespace :public do
