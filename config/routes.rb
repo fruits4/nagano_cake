@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
 
-  devise_for :customers
-  devise_for :admins
+  devise_for :customers, controllers: {
+  sessions:      'customers/sessions',
+  passwords:     'customers/passwords',
+  registrations: 'customers/registrations'
+}
+
+  devise_for :admins, controllers: {
+  sessions:      'admins/sessions',
+  passwords:     'admins/passwords',
+  registrations: 'admins/registrations'
+}
 
   get 'about' => 'homes#about'
 
@@ -14,7 +23,7 @@ Rails.application.routes.draw do
   namespace :public do
   	resources :shippings, only: [:index, :edit, :destroy, :create, :update]
   	resources :products, only: [:index]
-  	resource :orders, only: [:index, :new, :create, :complete, :show] do
+  	resources :orders, only: [:new, :index, :create, :show] do
       get 'confirm' => 'orders#confirm'
       get 'complete' => 'orders#complete'
     end
