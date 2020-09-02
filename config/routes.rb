@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   namespace :public do
   	resources :shippings, only: [:index, :edit, :destroy, :create, :update]
   	resources :products, only: [:index]
-  	resource :orders, only: [:index, :new, :create, :complete, :show] do
+  	resources :orders, only: [:new, :index, :create, :show] do
       get 'confirm' => 'orders#confirm'
       get 'complete' => 'orders#complete'
     end
