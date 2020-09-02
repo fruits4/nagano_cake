@@ -42,7 +42,7 @@ nav ul {
 }
 
 body {
-	margin-top: 110px;
+	margin-top: 150px;
 }
 
 footer {
@@ -53,6 +53,7 @@ footer {
 	line-height: 50px;
 	color: #fff;
 	background-color: black;
+	margin-top: 100px;
 }
 
 .about-box {
@@ -65,4 +66,9 @@ footer {
 
 .about-text {
 	font-size: 30px;
+}
+
+.orders-field {
+	border-radius: 5px;
+	border: 2px solid;
 }
