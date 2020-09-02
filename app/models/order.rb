@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
 
-	enum payment: [:cregit, :bank]
+	belongs_to :customer
+	has_many :orderd_products, dependent: :destroy
 
 end
