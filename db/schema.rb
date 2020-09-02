@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_093440) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "products", force: :cascade do |t|
     t.integer "genre_id"
     t.string "name", null: false
@@ -88,6 +89,13 @@ ActiveRecord::Schema.define(version: 2020_09_02_093440) do
     t.text "explain", null: false
     t.boolean "status", default: true, null: false
     t.integer "price", null: false
+
+  create_table "shippings", force: :cascade do |t|
+    t.integer "customer_id"
+    t.string "post_code"
+    t.string "address"
+    t.string "name"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
