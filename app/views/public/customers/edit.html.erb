@@ -1,0 +1,21 @@
+<h2>登録情報編集</h2>
+
+<%= form_with(@customer) do |f| %>
+
+	<p>名前</p><%= f.label :last_name %><%= f.label :first_name %>
+
+	<p>フリガナ</p><%= f.label :last_name_kana %><%= f.label :first_name_kana %>
+
+	<p>メールアドレス</p><%= f.label :mail %>
+
+	<p>郵便番号（ハイフンなし）</p><%= f.label :post_code %>
+
+	<p>住所</p><%= f.label :address %>
+
+	<p>電話番号（ハイフンなし）</p><%= f.label :phone_number %>
+
+	<%= f.submit "編集内容を保存する" %>
+
+	<%= link_to "退会する" %>
+	
+<% end %>

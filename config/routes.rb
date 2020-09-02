@@ -19,9 +19,17 @@ Rails.application.routes.draw do
       get 'complete' => 'orders#complete'
     end
   	resources :cart_items, only: [:index, :create, :update, :destroy]
+    resource :customers, only: [:edit, :update] do
+      collection do
+        get 'my_page' => 'customers#my_page'
+        get '/unsubscribe' => 'customers#unsubscribe'
+        patch '/withdraw' => 'customers#withdraw'
+      end
+    end
   end
 
-  
+
+
 
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
