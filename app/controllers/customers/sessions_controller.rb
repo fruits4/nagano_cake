@@ -24,14 +24,16 @@ class Customers::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    public_products_path # ログイン後に遷移するpathを設定
+    public_products_path
   end
 
   def after_sign_out_path_for(resource)
-    about_path # ログアウト後に遷移するpathを設定
+    new_customer_session_path
   end
 
   protected

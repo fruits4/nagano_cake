@@ -1,7 +1,9 @@
+
 <h2>会員Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+<div class="container">
+  <div class="row">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -21,6 +23,7 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
+</div>
 <% end %>
 
 <%= render "customers/shared/links" %>
