@@ -1,8 +1,7 @@
 class Public::OrdersController < ApplicationController
 
   def new
-  	@payment = Order.new
-    @address = Order.new
+    @order = Order.new
   end
 
   def index
