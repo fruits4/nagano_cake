@@ -15,8 +15,8 @@
     <%= form.label(:ご自身の住所) %><br>
     <%= form.radio_button :address, :female %>
     <%= form.label(:登録済の住所) %><br>
-    <%= f.radio_button :address, :male%>
-    <%= f.label(:新しい住所) %><br>
+    <%= form.radio_button :address, :male%>
+    <%= form.label(:新しい住所) %><br>
     <div class="form-group">
       <%= form.label :郵便番号（ハイフンなし）, :class => 'col-xs-3' %>
       <%= form.text_field :post_code, :class => 'orders-field' %><br>
@@ -33,7 +33,7 @@
 
 
   <div class="text-center">
-    <%= link_to public_order_confirm_path(current_customer) do %>
+    <%= link_to  do %>
       <p class="btn btn-primary">確認画面へ進む</p>
     <% end %>
   </div>
