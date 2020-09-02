@@ -20,8 +20,6 @@
               <%= link_to destroy_customer_session_path, method: :delete do %>
                 <span>ログアウト</span>
               <% end %>
-              
-          
           <% if customer_signed_in?%>
             <li class="nav-item nav-name">
               <span>ようこそ<%= current_customer.email %>さん</span>
