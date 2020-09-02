@@ -15,22 +15,23 @@
 	</tr>
 	<tr>
 		<th>郵便番号</th>
-		<td></td>
+		<td><%= current_customer.psot_code %></td>
 	</tr>
 	<tr>
 		<th>住所</th>
-		<td></td>
+		<td><%= current_customer.address %></td>
 	</tr>
 	<tr>
 		<th>電話番号</th>
-		<td></td>
+		<td><%= current_customer.phone_number %></td>
 	</tr>
 	<tr>
 		<th>メールアドレス</th>
-		<td></td>
+		<td><%= current_customer.email %></td>
 	</tr>
 </table>
 
+<!-- れおのshippingができたらlinkつなげる -->
 <p><strong>配送先</strong></p>
 <%= link_to "一覧を見る", '#' %>
 
