@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  devise_for :customers
+  devise_for :customers, controllers: { sessions: 'customers/sessions', registrations: 'customers/registrations', passwords: 'customers/passwords'}
   devise_for :admins
 
   get 'about' => 'homes#about'
