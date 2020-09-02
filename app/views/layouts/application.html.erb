@@ -14,12 +14,18 @@
       <div class="container">
         <span class="header-logo">ながのCake</span>
         <ul class="nav navbar-nav navbar-right nav-hover">
+          <%= link_to destroy_admin_session_path, method: :delete do %>
+                <span>ログアウト</span>
+              <% end %>
+              <%= link_to destroy_customer_session_path, method: :delete do %>
+                <span>ログアウト</span>
+              <% end %>
           <% if customer_signed_in?%>
             <li class="nav-item nav-name">
               <span>ようこそ<%= current_customer.email %>さん</span>
             </li>
             <li class="nav-item">
-              <%= link_to do %>
+              <%= link_to my_page_public_customers_path do %>
                 <span>マイページ</span>
               <% end %>
             </li>
@@ -29,7 +35,7 @@
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to do %>
+              <%= link_to public_cart_items_path do %>
                 <span>カート</span>
               <% end %>
             </li>
@@ -64,13 +70,13 @@
       </div>
     </nav>
 
-
-    <div class="container">
-
-      <%= link_to 'カートアイテム一覧', public_cart_items_path %>
-      <%= link_to '注文情報入力', new_public_orders_path %>
-      <%= yield %>
-    </div>
+    <main>
+      <div class="container">
+        <%= link_to '注文情報入力', new_public_order_path %>
+        <%= link_to '注文履歴一覧', public_orders_path %>
+        <%= yield %>
+      </div>
+    </main>
 
     <footer>
       <p>Footer!!!!</p>
