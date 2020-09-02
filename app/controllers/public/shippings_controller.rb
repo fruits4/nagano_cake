@@ -2,8 +2,8 @@ class Public::ShippingsController < ApplicationController
 
     #配送先一覧
   def index
-    	@shippings= Shipping.all
-        @shipping = Shipping.new
+    	@shippings = Shipping.all
+      @shipping = Shipping.new
   end
    #配送先新規保存
   def create
@@ -29,7 +29,7 @@ class Public::ShippingsController < ApplicationController
   end
 
  private
-    def shippings_params
-        params.require(:shipping).permit(:postal_code, :address,)
+    def shipping_params
+        params.require(:shipping).permit(:post_code, :address,)
     end
 end

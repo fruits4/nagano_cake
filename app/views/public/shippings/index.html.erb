@@ -27,15 +27,15 @@
     <% @shippings.each do |shipping| %>
     <tr>
       <th>郵便番号</th>
-      <td><%= post_code_format( shipping.post_code) %></td>
+      <td><%= shipping.post_code %></td>
       <th>住所</th>
       <td><%= shipping.address %></td>
       <th>宛名</th>
       <td><%= shipping.name %></td>
       <!-- 編集・削除　-->
       <td>
-        <%= link_to '編集する', edit_shippings_path( shipping ), class: "btn btn-primary" %>
-        <%= link_to '削除する', shipping_path( shipping ), class: "btn btn-danger", method: :delete, 'data-confirm' => '本当に削除しますか？' %>
+        <%= link_to '編集する', class: "btn btn-primary" %>
+        <%= link_to '削除する', class: "btn btn-danger", method: :delete, 'data-confirm' => '本当に削除しますか？' %>
       </td>
     </tr>
     <% end %>
