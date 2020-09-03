@@ -1,16 +1,20 @@
-
-<h2>会員Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="container">
   <div class="row">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <p class="col-xs-4 customer_login_font">会員の方はこちらからログイン</p>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3"><%= f.label "メールアドレス" %></div>
+    <div class="col-xs-6"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3"><%= f.label "パスワード" %></div>
+    <div class="col-xs-6"><%= f.password_field :password, autocomplete: "current-password" %></div>
   </div>
 
   <% if devise_mapping.rememberable? %>
