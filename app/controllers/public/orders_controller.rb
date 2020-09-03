@@ -2,15 +2,25 @@ class Public::OrdersController < ApplicationController
 
   def new
     @order = Order.new
+
   end
 
   def index
+    
   end
 
   def show
   end
 
+  def create
+    @order = Order.new(order_params)
+    @order.id == current_customer.id
+    @order.save
+    redirect_to public_order_confirm_path(current_customer)
+  end
+
   def confirm
+    @orders = Order.all
   end
 
   def complete

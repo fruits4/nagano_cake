@@ -14,12 +14,6 @@
       <div class="container">
         <span class="header-logo">ながのCake</span>
         <ul class="nav navbar-nav navbar-right nav-hover">
-          <%= link_to destroy_admin_session_path, method: :delete do %>
-                <span>ログアウト</span>
-              <% end %>
-              <%= link_to destroy_customer_session_path, method: :delete do %>
-                <span>ログアウト</span>
-              <% end %>
           <% if customer_signed_in?%>
             <li class="nav-item nav-name">
               <span>ようこそ<%= current_customer.email %>さん</span>
@@ -41,6 +35,27 @@
             </li>
             <li class="nav-item">
               <%= link_to destroy_customer_session_path, method: :delete do %>
+                <span>ログアウト</span>
+              <% end %>
+            </li>
+          <% elsif admin_signed_in? %>
+            <li class="nav-item">
+              <%= link_to public_products_path do %>
+                <span>商品一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to public_orders_path do %>
+                <span>注文履歴一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_genres_path do %>
+                <span>ジャンル一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_admin_session_path, method: :delete do %>
                 <span>ログアウト</span>
               <% end %>
             </li>
