@@ -1,12 +1,12 @@
 <h2>登録情報編集</h2>
 
-<%= form_with(@customer) do |f| %>
+<%= form_with model: @customer, url: public_customers_path, local: true do |f| %>
 
-	<p>名前</p><%= f.label :last_name %><%= f.label :first_name %>
+	<%= f.label :名前 %><%= f.text_field :last_name %><%= f.text_field :first_name %>
 
-	<p>フリガナ</p><%= f.label :last_name_kana %><%= f.label :first_name_kana %>
+	<%= f.label :フリガナ %><%= f.text_field :last_name_kana %><%= f.text_field :first_name_kana %>
 
-	<p>メールアドレス</p><%= f.label :mail %>
+	<%= f.label :メールアドレス %><%= f.text_field :mail %>
 
 	<p>郵便番号（ハイフンなし）</p><%= f.label :post_code %>
 

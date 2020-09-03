@@ -2,18 +2,19 @@
 	<div class="row">
 <h2>マイページ</h2>
 
-<p><strong>登録情報</strong></p>
-<%= link_to "編集する", edit_public_customers_path %>
-<%= link_to "パスワードを変更する", '#' %>
+<p class="mypage-title"><strong>登録情報</strong></p>
+<%= link_to "編集する", edit_public_customers_path, class: 'btn btn-primary' %>
+<%= link_to "パスワードを変更する", '#', class: 'btn btn-primary' %>
 
-<table>
+<table class="table">
 	<tr>
 		<th>氏名</th>
-		<td><%= current_customer.last_name %><%= current_customer.first_name %></td>
+		<td><%= @customer.last_name %></td>
+		<%= @customer.first_name %>
 	</tr>
 	<tr>
 		<th>カナ</th>
-		<td><%= current_customer.last_name_kana %><%= current_customer.first_name_kana %></td>
+		<td><%= @customer.last_name_kana %><%= current_customer.first_name_kana %></td>
 	</tr>
 	<tr>
 		<th>郵便番号</th>
@@ -29,16 +30,16 @@
 	</tr>
 	<tr>
 		<th>メールアドレス</th>
-		<td><%= current_customer.email %></td>
+		<td><%= @customer.email %></td>
 	</tr>
 </table>
 
 <!-- れおのshippingができたらlinkつなげる -->
 <p><strong>配送先</strong></p>
-<%= link_to "一覧を見る", '#' %>
+<%= link_to "一覧を見る", 'public_shippings_path(current_customer.id)' %>
 
 <p><strong>注文履歴</strong></p>
-<%= link_to "一覧を見る", '#' %>
+<%= link_to "一覧を見る", 'public_orders_path(current_customer.id)' %>
 
 	</div>
 </div>
