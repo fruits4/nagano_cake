@@ -1,0 +1,15 @@
+<table class="side_genres">
+	<tbody class="side_genres_tb">
+		<tr>
+			<th class="side_genres_head">ジャンル検索</th>
+		</tr>
+		<tr>
+			<td class="side_genres_items">
+				<% @genres.each do |genre| %>
+				<%= link_to genre.name, public_products_path, class: "side_genres_words"%>
+				<br>
+				<% end %>
+			</td>
+		</tr>
+	</tbody>
+</table>
