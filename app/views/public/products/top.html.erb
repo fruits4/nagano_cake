@@ -1,21 +1,25 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-3">
-			<table class="side_genres">
-				<tr>
-					<th>ジャンル検索</th>
-				</tr>
-				<tr>
-					<td>
-						<% @genres.each do |genre| %>
-						<%= link_to genre.name, public_products_path, class: "side_genres_items"%>
-						<br>
-						<% end %>
-					</td>
-				</tr>
-			</table>
+			<%= render 'side_genre' %>
 		</div>
 		<div class="col-xs-9">
+			<div class="public_top_intro">
+				<div class="intro_box">
+					<p class="top_intro">
+						ようこそ、NaganoCakeへ！<br>
+						このサイトは、ケーキ販売のECサイトになります。<br>
+						会員でない方も商品の閲覧はできますが、<br>
+						購入には会員登録が必要になります。
+					</p>
+				</div>
+			</div>
+			<div class="osusume">
+				<% @products.each do |product| %>
+					<div><%= product.image_id %></div>
+					<div><%= link_to product.name, public_product_path(product.id), class: public_osusume %></div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
