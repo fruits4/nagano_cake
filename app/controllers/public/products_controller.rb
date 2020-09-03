@@ -7,6 +7,7 @@ class Public::ProductsController < ApplicationController
 	end
 
 	def top
-		
+		@genres = Genre.all
+		@products = Product.all
 	end
 end
