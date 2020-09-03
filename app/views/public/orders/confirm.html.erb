@@ -42,11 +42,9 @@
 	</div>
 	<div class="confirm-box">
 		<h3><strong>お届け先</strong></h3>
-		<% @orders.each do |order| %>
-			<%= order.post_code %>
-			<%= order.address %><br>
-			<%= order.name %>
-		<% end %>
+			<%= @order.post_code %>
+			<%= @order.address %>
+			<%= @order.name %>
 	</div>
 	<div class="text-center">
 		<%= link_to public_order_complete_path do%>
