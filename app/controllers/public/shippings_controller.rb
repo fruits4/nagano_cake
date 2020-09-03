@@ -3,13 +3,14 @@ class Public::ShippingsController < ApplicationController
     #配送先一覧
   def index
     	@shippings = Shipping.all
-      @shipping = Shipping.new
+        @shipping = Shipping.new
   end
    #配送先新規保存
   def create
   	@shipping = Shipping.new(shipping_params)
+  	@shipping.customer = current_customer
   	@shipping.save
-  	redirect_to shipping_path(@shipping.id)
+  	redirect_to public_shippings_path
   end
    #配送先編集
   def edit
@@ -19,17 +20,18 @@ class Public::ShippingsController < ApplicationController
   def update
   	@shipping = Shippinng.find(params[:id])
   	@shipping.update(shipping_params)
-  	redirect_to shipping_path(@shipping.id)
+  	redirect_to public_shipping_path(current_customer)
   end
     #配送先削除
   def destroy
   	@shipping = Shipping.find(params[:id])
   	@shipping.destroy
-  	redirect_to shipping_path(@deliver.id)
+  	redirect_to public_shippings_path
+
   end
 
  private
     def shipping_params
-        params.require(:shipping).permit(:post_code, :address,)
+        params.require(:shipping).permit(:post_code, :address, :name)
     end
 end
