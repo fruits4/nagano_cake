@@ -15,9 +15,13 @@
 				</div>
 			</div>
 			<div class="osusume">
+				<h2>おすすめの商品</h2>
 				<% @products.each do |product| %>
-					<div><%= product.image_id %></div>
-					<div><%= link_to product.name, public_product_path(product.id), class: public_osusume %></div>
+					<div class="osusume_box">
+						<div class="osusume_img"><%= product.image_id %></div>
+						<div class="osusume_name"><%= link_to product.name, public_product_path(product.id), class: public_osusume %></div>
+						<div class="price"><%= "￥" + product.price %></div>
+					</div>
 				<% end %>
 			</div>
 		</div>
