@@ -8,8 +8,9 @@ class Public::ShippingsController < ApplicationController
    #配送先新規保存
   def create
   	@shipping = Shipping.new(shipping_params)
+    @shipping.customer_id = current_customer
   	@shipping.save
-  	redirect_to shipping_path(@shipping.id)
+  	redirect_to public_shippings_path
   end
    #配送先編集
   def edit

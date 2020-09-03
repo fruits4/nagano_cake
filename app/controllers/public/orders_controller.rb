@@ -14,7 +14,7 @@ class Public::OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.id == current_customer.id
+    @order.customer = current_customer
     @order.save
     redirect_to public_order_confirm_path(current_customer)
   end
@@ -27,6 +27,7 @@ class Public::OrdersController < ApplicationController
   end
 
   private
+  
   def order_params
   	params.require(:order).permit(:post_code, :address, :name, :shpping_cost, :total_price, :status, :payment)
   end

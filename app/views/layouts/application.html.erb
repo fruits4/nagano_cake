@@ -16,7 +16,7 @@
         <ul class="nav navbar-nav navbar-right nav-hover">
           <% if customer_signed_in?%>
             <li class="nav-item nav-name">
-              <span>ようこそ<%= current_customer.email %>さん</span>
+              <span>ようこそ<%= current_customer.last_name %><%= current_customer.first_name %>さん</span>
             </li>
             <li class="nav-item">
               <%= link_to my_page_public_customers_path do %>
@@ -89,6 +89,7 @@
       <div class="container">
         <%= link_to '注文情報入力', new_public_order_path %>
         <%= link_to '注文履歴一覧', public_orders_path %>
+        <%= link_to '配送先一覧', public_shippings_path %>
         <%= yield %>
       </div>
     </main>
