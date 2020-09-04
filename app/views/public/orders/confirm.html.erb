@@ -24,7 +24,7 @@
 		<table class="table table-bordered">
 			<tr>
 				<th class="info">送料</th>
-				<td>800</td>
+				<td><%= @order.shipping_cost.to_i %></td>
 			</tr>
 			<tr>
 				<th class="info">商品合計</th>
@@ -37,18 +37,22 @@
 		</table>
 	</div>
 	<div class="confirm-box">
+	<%= form_for(@order, url: public_orders_path) do |f| %>
 		<h3><strong>支払方法</strong></h3>
-		<p>クレジットカード</p>
+		<%= @order.payment %>
+		<%= f.hidden_field :payment, :value => @order.payment %>
 	</div>
 	<div class="confirm-box">
 		<h3><strong>お届け先</strong></h3>
-			<%= @order.post_code %>
-			<%= @order.address %>
-			<%= @order.name %>
-	</div>
-	<div class="text-center">
-		<%= link_to public_order_complete_path do%>
-			<p class="btn btn-success btn-lg">購入を確定する</p>
-		<% end %>
-	</div>
+        <%= @order.post_code %>
+        <%= @order.address %>
+        <%= @order.name %>
+        <%= f.hidden_field :post_code, :value => @order.post_code %>
+        <%= f.hidden_field :address, :value => @order.address %>
+        <%= f.hidden_field :name, :value => @order.name %>
+    </div>
+    <div class="text-center">
+        <%= f.submit "購入を確定する", class: "btn btn-primary btn-lg" %>
+    </div>
+    <% end %>
 </div>

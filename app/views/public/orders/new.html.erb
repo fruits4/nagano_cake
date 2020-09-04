@@ -1,34 +1,37 @@
 <div class="row">
   <h3 class="col-xs-offset-2">注文情報入力</h3>
-  <h3><strong>支払い方法</strong></h3>
-  <%= form_with do |form| %>
-    <%= form.radio_button :payment, :male %>
-    <%= form.label(:クレジットカード) %><br>
-    <%= form.radio_button :payment, :female %>
-    <%= form.label(:銀行振り込み) %><br>
-  <% end %>
 
+  <%= form_for(@order, url: confirm_public_orders_path) do |f| %>
 
-  <h3><strong>お届け先</strong></h3>
-
-  <%= form_with @order, url: {action: 'confirm' } do  |f| %>
-
+    <h3><strong>支払い方法</strong></h3>
     <div class="form-group">
-      <%= f.radio_button :address_select, :customer_address, checked: true %>
+      <%= f.radio_button :payment, :クレジットカード, checked: true %>
+      <%= f.label 'クレジットカード' %><br>
+    </div>
+    <div class="form-group">
+      <%= f.radio_button :payment, :銀行振り込み, checked: true %>
+      <%= f.label '銀行振り込み' %><br>
+    </div>
+
+    <h3><strong>お届け先</strong></h3>
+    <div class="form-group">
+      <%= radio_button_tag("address_select", 0, checked: true) %>
       <%= f.label 'ご自身の住所' %><br>
-      <p class="col-xs-offset-1"><%= current_customer.post_code %><%= current_customer.address %><%= current_customer.last_name %><%= current_customer.first_name %><br></p>
+      <p class="col-xs-offset-1">
+        <%= current_customer.post_code %><%= current_customer.address %><%= current_customer.last_name %><%= current_customer.first_name %>
+      </p>
     </div>
 
     <div class="form-group">
-      <%= f.radio_button :address_select, :shipping_address, checked: true %>
+      <%= radio_button_tag("address_select", 1, checked: true) %>
       <%= f.label '登録済住所から選択' %><br>
       <div class="col-xs-offset-1">
-        <%= f.collection_select(:select_shipping, @shippings, :id, :address) %>
+        <%= f.collection_select(:select_shipping, @shippings, :id, :select_shipping) %>
       </div>
     </div>
 
     <div class="form-group">
-      <%= f.radio_button :address_select, :new_address, checked: true %>
+      <%= radio_button_tag("address_select", 2, checked: true) %>
       <%= f.label '新しい住所' %>
     </div>
 

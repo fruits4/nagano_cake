@@ -30,10 +30,12 @@ Rails.application.routes.draw do
   	resources :products, only: [:index, :show]
   	resources :orders, only: [:new, :index, :create, :show] do
       collection do
-        get '/confirm' => 'orders#confirm'
-        get '/complete' => 'orders#complete'
+        post 'confirm' => 'orders#confirm'
+        get 'complete' => 'orders#complete'
       end
     end
+        
+        
   	resources :cart_items, only: [:index, :create, :update, :destroy]
     resource :customers, only: [:edit, :update] do
       collection do
