@@ -6,16 +6,20 @@
 		<h4><strong>注文情報</strong></h4>
 		<table class="table table-bordered">
 			<tr>
-				<th class="info">注文日</th>
-				<td>2020.09.01</td>
+				<th class="info col-xs-2">注文日</th>
+				<td><%= @order.created_at.strftime("%Y/%m/%d") %></td>
 			</tr>
 			<tr>
 				<th class="info">配送先</th>
-				<td>埼玉県</td>
+				<td>
+					<%= @order.post_code %><br>
+					<%= @order.address %><br>
+					<%= @order.name %>
+				</td>
 			</tr>
 			<tr>
 				<th class="info">支払い方法</th>
-				<td>銀行振り込み</td>
+				<td><%= @order.payment %></td>
 			</tr>
 			<tr>
 				<th class="info">ステータス</th>
