@@ -40,5 +40,4 @@ private
     def product_params
 	    params.repuire(:product).permit(:name,:image_id,:explain,:status,:price)
     end
-	
 end

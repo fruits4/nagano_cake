@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
   	resources :products
-    resources :genres, only: [:index, :create, :update, :edit]
+    resources :genres, only: [:index, :create, :update, :edit] do
+      patch '/:id/edit' => 'genres#update'
+    end
     get 'top' => 'top#top'
   end
 
@@ -29,9 +31,13 @@ Rails.application.routes.draw do
   	resources :shippings, only: [:index, :edit, :destroy, :create, :update]
   	resources :products, only: [:index, :show]
   	resources :orders, only: [:new, :index, :create, :show] do
-      get 'confirm' => 'orders#confirm'
-      get 'complete' => 'orders#complete'
+      collection do
+        post 'confirm' => 'orders#confirm'
+        get 'complete' => 'orders#complete'
+      end
     end
+        
+        
   	resources :cart_items, only: [:index, :create, :update, :destroy]
     resource :customers, only: [:edit, :update] do
       collection do
