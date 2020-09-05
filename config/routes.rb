@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   devise_for :customers, controllers: {
     sessions: 'customers/sessions',
     registrations: 'customers/registrations',
@@ -36,8 +34,7 @@ Rails.application.routes.draw do
         get 'complete' => 'orders#complete'
       end
     end
-        
-        
+
   	resources :cart_items, only: [:index, :create, :update, :destroy]
     resource :customers, only: [:edit, :update] do
       collection do
