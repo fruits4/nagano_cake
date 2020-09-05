@@ -1,0 +1,71 @@
+<div class="row">
+	<h2 class="col-xs-offset-2">注文履歴詳細</h2>
+</div>
+<div class="row">
+	<div class="col-xs-7">
+		<h4><strong>注文情報</strong></h4>
+		<table class="table table-bordered">
+			<tr>
+				<th class="info col-xs-2">注文日</th>
+				<td><%= @order.created_at.strftime("%Y/%m/%d") %></td>
+			</tr>
+			<tr>
+				<th class="info">配送先</th>
+				<td>
+					<%= @order.post_code %><br>
+					<%= @order.address %><br>
+					<%= @order.name %>
+				</td>
+			</tr>
+			<tr>
+				<th class="info">支払い方法</th>
+				<td><%= @order.payment %></td>
+			</tr>
+			<tr>
+				<th class="info">ステータス</th>
+				<td>入金確認</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-4">
+		<h4><strong>請求情報</strong></h4>
+		<table class="table table-bordered">
+			<tr>
+				<th class="info">商品合計</th>
+				<td>492408</td>
+			</tr>
+			<tr>
+				<th class="info">配送料</th>
+				<td>800</td>
+			</tr>
+			<tr>
+				<th class="info">ご請求額</th>
+				<td>752072</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-8">
+		<h4><strong>注文内容</strong></h4>
+		<table class="table table-bordered">
+			<tr class="info">
+				<th>商品</th>
+				<th>単価（税込）</th>
+				<th>個数</th>
+				<th>小計</th>
+			</tr>
+			<tr>
+				<td>ケーキ</td>
+				<td>599</td>
+				<td>3</td>
+				<td>23</td>
+			</tr>
+			<tr>
+				<td>ケーキ</td>
+				<td>599</td>
+				<td>3</td>
+				<td>23</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
