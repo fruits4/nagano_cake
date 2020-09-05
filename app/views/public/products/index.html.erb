@@ -8,7 +8,10 @@
 				<% @products.each do |product| %>
 					<div class="pb_products_list">
 						<div><%= attachment_image_tag product, :image, :fill, 200, 150, format: "jpg" %></div>
-						<div><%=link_to product.name, public_product_path(product.id) %></div>
+						<div><%=link_to public_product_path(product.id) do %>
+								<P><%= product.name %></P>
+							 <% end %>
+						</div>
 						<div>￥<%= product.price %></div>
 					</div>
 				<% end %>
