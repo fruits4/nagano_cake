@@ -1,0 +1,42 @@
+<div class = "row">
+	<h2>会員一覧</h2>
+</div>
+
+<div class = "row mt-3">
+	<div class = "offset-sm-1 col-sm-10">
+		<table class = "table table-hover">
+			<thead>
+				<tr>
+					<th>会員ID</th>
+					<th>名前</th>
+					<th>メールアドレス</th>
+					<th>会員ステータス</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @customers.each do |customer| %>
+				<tr id =<%= "customer-info-#{customer.id}" %>
+					<td><%=customer.id %></td>
+					<td><%=link_to admin_customer_path(customer) do %>
+						<%= customer.last_name %>
+						<%= customer.first_name %>
+						<% end %>
+					</td>
+					<td><%= costomer.email %></td>
+					<td><%= if customer.is_vaild == ture %>
+						有効会員
+						<% end %>
+						退会済
+						<% end %>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+
+
