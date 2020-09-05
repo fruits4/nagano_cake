@@ -1,1 +1,14 @@
-show
+<div class = "row">
+	<div class = "col-xs-5">
+		<h1>商品画像表示</h1>
+	</div>
+
+<div class = "col-7-xs">
+	<h3>商品名 <%= @product.name %></h3>
+	<h4>商品説明 <%= @product.explain %></h4>
+	<h4>税込価格（税抜価格) <%=product.price %>（税込）円(<%= @product.price %>円)</h4>
+	<h4>販売ステータス <%= @product.status ? "販売中" : "在庫なし" %></h4>
+
+  <%= link_to "編集",edit_admin_product_path(@product),class: "btn btn-warning" %><br>
+</div>
+</div>
