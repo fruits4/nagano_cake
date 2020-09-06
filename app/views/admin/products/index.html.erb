@@ -18,10 +18,10 @@
 	</thead>
 
 	<tbody>
-		<% @products.each do |f| %>
+		<% @products.each do |product| %>
 		<tr>
 			<td><%= product.id %></td>
-			<td><%= link_to item.name,admin_product_path(product),class: "product_#{product.id}" %></td>
+			<td><%= link_to product.name,admin_product_path(product),class: "product_#{product.id}" %></td>
 			<td><%= product.price %></td>
 			<td><%= product.genre.name %></td>
 			<td><%= product.status ? "在庫あり" : "在庫なし" %></td>
