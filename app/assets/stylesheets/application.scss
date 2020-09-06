@@ -83,16 +83,16 @@ footer {
 }
 
 .customer_font_sizing {
-	font-size: 12px;
-
+	font-size: 18px;
 }
 
-div.customer_font_sizing > div {
-	font-size: 12px;
+.new_customer_text_config {
+	line-height: 25px;
 }
 
-.customer_btn_center {
-	margin: 0 auto;
+.btn_pad {
+	padding: 8px 50px;
+	font-size: 18px;
 }
 
 .customer_login_font {
@@ -114,10 +114,6 @@ div.customer_font_sizing > div {
 	border-bottom: medium solid #999;
 	text-align: center;
 }
-
-// .side_genres_items {
-// 	font-size: 18px;
-// }
 
 .side_genres_words {
 	color: #000;
@@ -147,27 +143,10 @@ div.customer_font_sizing > div {
 	vertical-align: middle;
 	margin: 80px auto;
 }
-
-// .osusume_box {
-// 	float: left;
-// }
-
-// .osusume_img {
-// 	border: medium solid #FFF;
-// 	width: 200px;
-// 	height: 150px;
-// 	float: left;
-// }
-
-// .osusume_name {
-// 	font-size: 14px;
-// 	float: left;
-// }
-
-// .pb_products_list {
-
-// }
-
 .public_price_font_size {
 	font-size: 20px;
+}
+
+.empty_align {
+	margin-top: 5px;
 }
