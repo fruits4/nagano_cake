@@ -19,7 +19,11 @@
 				<% @products.each do |product| %>
 					<div class="osusume_box">
 						<div class="osusume_img"><%= attachment_image_tag product, :image, :fill, 200, 150, format: "jpg "%></div>
-						<div class="osusume_name"><%= link_to product.name, public_product_path(product.id), class: public_osusume %></div>
+						<div class="osusume_name">
+							<%= link_to public_product_path(@products) do %>
+								<%= product.name %>
+							<% end %>
+						</div>
 						<div class="price">￥<%= product.price %></div>
 					</div>
 				<% end %>
