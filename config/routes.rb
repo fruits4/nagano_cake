@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       patch '/:id/edit' => 'genres#update'
     end
     get 'top' => 'top#top'
+    resources :orders, only: [:index, :show, :update]
   end
 
   namespace :public do
