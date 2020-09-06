@@ -35,7 +35,11 @@ Rails.application.routes.draw do
       end
     end
 
-  	resources :cart_items, only: [:index, :create, :update, :destroy]
+  	resources :cart_items, only: [:index, :create, :update, :destroy] do
+      collection do
+        delete 'destroy_all' => 'cart_items#destroy_all'
+      end
+    end
     resource :customers, only: [:edit, :update] do
       collection do
         get 'my_page' => 'customers#my_page'
