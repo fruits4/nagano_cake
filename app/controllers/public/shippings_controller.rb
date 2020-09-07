@@ -2,7 +2,7 @@ class Public::ShippingsController < ApplicationController
 
     #配送先一覧
   def index
-    	@shippings = Shipping.all
+    	@shippings = current_customer.shippings
         @shipping = Shipping.new
   end
    #配送先新規保存
