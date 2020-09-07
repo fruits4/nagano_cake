@@ -112,21 +112,32 @@ footer {
 .side_genres {
 	font-size: 18px;
 	width: 200px;
-}
-
-.side_genres_tb {
-	border: medium solid #999;
+	padding: 0.2em 0.5em;
+	margin: 2em 0;
+	color: #565656;
+	background: #ffeaea;
+	box-shadow: 0px 0px 0px 10px #ffeaea;
+	border: dashed 2px #ffc3c3;
+	border-radius: 8px;
 }
 
 .side_genres_head {
-	background-color: #ccc;
-	border-bottom: medium solid #999;
+	border-bottom: dashed 2px #ffc3c3;
 	text-align: center;
 }
 
+.side_genres_items {
+	padding-left: 20px;
+}
+
 .side_genres_words {
-	color: #000;
+	color: #666;
 	line-height: 200%;
+	padding-left: 8px;
+}
+
+.side_ico {
+	font-size: 12px;
 }
 
 //public/top
@@ -161,4 +172,32 @@ footer {
 
 .empty_align {
 	margin-top: 5px;
+}
+
+.pb_products_list {
+	position: relative;
+	background: #fff0cd;
+	box-shadow: 0px 0px 0px 5px #fff0cd;
+	border: dashed 2px white;
+	padding: 0.2em 0.5em;
+	color: #454545;
+	width: 180px;
+	height: 200px;
+	margin: 10px 10px;
+}
+
+.pb_products_list:after {
+	position: absolute;
+	content: '';
+	right: -7px;
+	top: -7px;
+	border-width: 0 15px 15px 0;
+	border-style: solid;
+	border-color: #ffdb88 #fff #ffdb88;
+	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.under_bar {
+	margin: 20px auto;
+	border-top: 2px solid #666;
 }

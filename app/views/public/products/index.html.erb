@@ -12,9 +12,10 @@
 				<% end %>
 			</h2>
 			<div class="row empty_align">　</div>
+			<div class="row">
 				<% @products.each do |product| %>
 					<div class="pb_products_list col-xs-3">
-						<div><%= attachment_image_tag product, :image, :fill, 200, 150, format: "jpg" %></div>
+						<div><%= attachment_image_tag product, :image, :fill, 160, 140, format: "jpg" %></div>
 						<div><%=link_to public_product_path(product.id) do %>
 								<P><%= product.name %></P>
 							 <% end %>
@@ -23,7 +24,7 @@
 					</div>
 				<% end %>
 			</div>
-			<div class="row">
+			<div class="row under_bar">
 				<div class="col-xs-2"></div>
 				<div class="col-xs-3">
 					<%= paginate @products %>
