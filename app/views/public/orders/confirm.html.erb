@@ -14,13 +14,16 @@
 				<% sum = 0 %>
 				<% @cart_items.each do |cart_item| %>
 				<tr>
-					<td><%= cart_item.product.name %></td>
-					<td><% tax = cart_item.product.price * 1.08 %>
-						<%= tax.to_i %>
+					<td>
+						<%= attachment_image_tag cart_item.product, :image, :fill, 40, 40 %>
+						<%= cart_item.product.name %>
 					</td>
-					<td><%= cart_item.amount %></td>
+					<td><% tax = cart_item.product.price * 1.08 %>
+						<%= tax.to_i %>円
+					</td>
+					<td><%= cart_item.amount %>個</td>
 					<td><% subtotal = cart_item.amount * tax %>
-						<%= subtotal.to_i %>
+						<%= subtotal.to_i %>円
 					</td>
 				</tr>
 				<% sum += subtotal %>
@@ -32,17 +35,17 @@
 		<table class="table table-bordered">
 			<tr>
 				<th class="info">送料</th>
-				<td><%= @order.shipping_cost %></td>
+				<td><%= @order.shipping_cost %>円</td>
 			</tr>
 			<tr>
 				<th class="info">商品合計</th>
-				<td><%= sum.to_i %></td>
+				<td><%= sum.to_i %>円</td>
 			</tr>
 			<tr>
 				<th class="info">請求金額</th>
 				<td>
 					<% total_price =  sum.to_i + @order.shipping_cost.to_i %>
-					<%= total_price %>
+					<%= total_price %>円
 				</td>
 			</tr>
 		</table>

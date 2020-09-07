@@ -16,4 +16,5 @@ class Order < ApplicationRecord
     	[post_code, address, name].join
   	end
 
+
 end
