@@ -11,32 +11,32 @@
       <div class="row customer_font_sizing">
         <p class="col-xs-3">名前</p>
         <div class="col-xs-1">(姓)</div>
-        <div class="col-xs-3"><%= f.text_field :last_name %></div>
+        <div class="col-xs-3"><%= f.text_field :last_name, :placeholder => "例）山田" %></div>
         <div class="col-xs-1">(名)</div>
-        <div class="col-xs-3"><%= f.text_field :first_name%></div>
+        <div class="col-xs-3"><%= f.text_field :first_name, :placeholder => "太郎" %></div>
       </div>
 
       <div class="row customer_font_sizing">
         <p class="col-xs-3">フリガナ</p>
         <div class="col-xs-1">(セイ)</div>
-        <div class="col-xs-3"><%= f.text_field :last_name_kana %></div>
+        <div class="col-xs-3"><%= f.text_field :last_name_kana, :placeholder => "ヤマダ" %></div>
         <div class="col-xs-1">(メイ)</div>
-        <div class="col-xs-3"><%= f.text_field :first_name_kana %></div>
+        <div class="col-xs-3"><%= f.text_field :first_name_kana, :placeholder => "タロウ" %></div>
       </div>
 
       <div class="row customer_font_sizing">
         <p class="col-xs-4">メールアドレス</p>
-        <div class="col-xs-3"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+        <div class="col-xs-3"><%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "yamada@example.com"%></div>
       </div>
 
       <div class="row customer_font_sizing">
         <p class="col-xs-4">郵便番号(ハイフンなし)</p>
-        <div class="col-xs-3"><%= f.text_field :post_code %></div>
+        <div class="col-xs-3"><%= f.text_field :post_code, :placeholder => "1234567" %></div>
       </div>
 
       <div class="row customer_font_sizing">
         <p class="col-xs-4">住所</p>
-        <div clasS="col-xs-8"><%= f.text_field :address, class: "col-xs-10" %></div>
+        <div clasS="col-xs-8"><%= f.text_field :address, class: "col-xs-10", :placeholder => "東京都杉並区1-1-1　グランドハイム西川" %></div>
       </div>
 
       <div class="row customer_font_sizing">
