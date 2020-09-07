@@ -18,6 +18,7 @@
 	</thead>
 
 	<tbody>
+		<% sum = 0 %>
 		<% @cart_items.each do |cart_item| %>
 		<tr>
 			<td><%= cart_item.product.name %></td>
@@ -39,6 +40,7 @@
 				<% end %>
 			</td>
 		</tr>
+		<% sum += subtotal.to_i %>
 		<% end %>
 	</tbody>
 </table>
@@ -52,7 +54,7 @@
 		<table class="table table-bordered">
 			<tr>
 				<th class="info">合計金額</th>
-				<th>3500円</th>
+				<th><%= sum %></th>
 			</tr>
 		</table>
 	</div>

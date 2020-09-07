@@ -56,6 +56,8 @@ footer {
 	margin-top: 100px;
 }
 
+//about
+
 .about-box {
 	text-align: center;
 }
@@ -67,6 +69,8 @@ footer {
 .about-text {
 	font-size: 30px;
 }
+
+//orders
 
 .orders-field {
 	border-radius: 5px;
@@ -83,16 +87,16 @@ footer {
 }
 
 .customer_font_sizing {
-	font-size: 12px;
-
+	font-size: 18px;
 }
 
-div.customer_font_sizing > div {
-	font-size: 12px;
+.new_customer_text_config {
+	line-height: 25px;
 }
 
-.customer_btn_center {
-	margin: 0 auto;
+.btn_pad {
+	padding: 8px 50px;
+	font-size: 18px;
 }
 
 .customer_login_font {
@@ -100,6 +104,7 @@ div.customer_font_sizing > div {
 	padding: 0;
 }
 
+// ジャンルのサイドメニュー
 .side_genres {
 	font-size: 18px;
 	width: 200px;
@@ -115,15 +120,12 @@ div.customer_font_sizing > div {
 	text-align: center;
 }
 
-// .side_genres_items {
-// 	font-size: 18px;
-// }
-
 .side_genres_words {
 	color: #000;
 	line-height: 200%;
 }
 
+//public/top
 .public_top_intro {
 	width: 600px;
 	height: 300px;
@@ -148,25 +150,11 @@ div.customer_font_sizing > div {
 	margin: 80px auto;
 }
 
-// .osusume_box {
-// 	float: left;
-// }
+//public/products詳細画面
+.public_price_font_size {
+	font-size: 20px;
+}
 
-// .osusume_img {
-// 	border: medium solid #FFF;
-// 	width: 200px;
-// 	height: 150px;
-// 	float: left;
-// }
-
-// .osusume_name {
-// 	font-size: 14px;
-// 	float: left;
-// }
-
-// .pb_products_list {
-
-// }
-
-.genre_edit_button {
+.empty_align {
+	margin-top: 5px;
 }
