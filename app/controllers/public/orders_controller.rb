@@ -7,7 +7,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all
+    @orders = current_customer.orders
   end
 
   def show
@@ -15,6 +15,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
+    @cart_items = current_customer.cart_items
     @order = current_customer.orders.new(order_params)
     if params[:address_select] == "0"
        @order.post_code = current_customer.post_code
@@ -30,7 +31,6 @@ class Public::OrdersController < ApplicationController
        @order.post_code = @order.post_code
        @order.address = @order.address
        @order.name = @order.name
-       @order.save
     end
   end
 
