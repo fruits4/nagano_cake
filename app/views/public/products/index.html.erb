@@ -4,9 +4,15 @@
 			<%= render 'side_genre' %>
 		</div>
 		<div class="col-xs-9">
-			<h2 class="row">商品一覧(全<%= @pdcount.count %>件)</h2>
+			<h2 class="row">
+				<% if @genre.nil? %>
+					商品一覧(全<%= @pdcount.count %>件)
+				<% else %>
+					<%= @genre.name %>一覧(全<%= @product.count %>件)
+				<% end %>
+			</h2>
 				<% @products.each do |product| %>
-					<div class="pb_products_list col-xs-4">
+					<div class="pb_products_list col-xs-3">
 						<div><%= attachment_image_tag product, :image, :fill, 200, 150, format: "jpg" %></div>
 						<div><%=link_to public_product_path(product.id) do %>
 								<P><%= product.name %></P>
