@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     end
     get 'top' => 'top#top'
     resources :orders, only: [:index, :show, :update]
+    resources :orderd_products, only: [:update]
   end
 
   namespace :public do

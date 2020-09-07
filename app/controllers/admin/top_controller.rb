@@ -1,5 +1,7 @@
 class Admin::TopController < ApplicationController
 
-	@orders = Order.where("created_at >= ?", Date.today)
+	def top
+		@orders = Order.where("created_at >= ?", Date.today)
+	end
 
 end
