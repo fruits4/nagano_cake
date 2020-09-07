@@ -12,6 +12,7 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @orderd_products = @order.orderd_products
   end
 
   def confirm
@@ -37,7 +38,17 @@ class Public::OrdersController < ApplicationController
   def create
       @order = Order.new(order_params)
       @order.customer = current_customer
-      @order.save
+      @cart_items = current_customer.cart_items
+      if @order.save
+        @cart_items.each do |cart_item|
+          @orderd_product = @order.orderd_products.new
+          @orderd_product.product_id = cart_item.product.id
+          @orderd_product.amount = cart_item.amount
+          @orderd_product.price = cart_item.product.price
+          @orderd_product.save
+        end
+      end
+
       redirect_to complete_public_orders_path
   end
 
@@ -47,7 +58,7 @@ class Public::OrdersController < ApplicationController
   private
   
   def order_params
-  	params.require(:order).permit(:post_code, :address, :name, :payment, :total_price, :status)
+  	params.require(:order).permit(:post_code, :address, :name, :payment, :total_price, :status, :customer_id)
   end
 
   def select_shipping_params

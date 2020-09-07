@@ -16,4 +16,8 @@ class Order < ApplicationRecord
     	[post_code, address, name].join
   	end
 
+  	def tax
+    	tax = 1.08
+  	end
+
 end
