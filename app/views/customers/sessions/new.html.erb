@@ -1,5 +1,5 @@
 <div class="row ">
-  <div class="col-xs-2">
+  <div class="col-xs-1">
   </div>
   <div class="col-xs-9">
     <div class="row">
@@ -8,17 +8,17 @@
     <div class="row">　</div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-1">
         </div>
         <div class="col-xs-3">
           <%= f.label "メールアドレス" %>
         </div>
-        <%= f.email_field :email, autofocus:true, autocomplete: "email", class: "col-xs-5" %>
+        <%= f.email_field :email, autofocus:true, autocomplete: "email", class: "col-xs-5", :placeholder => "yamada@example.com" %>
       </div>
       <div class="row">　</div>
 
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-1">
         </div>
         <div class="col-xs-3">
           <%= f.label "パスワード" %>
@@ -26,21 +26,36 @@
         <%= f.password_field :password, autocomplete: "current-password", class: "col-xs-5" %>
       </div>
       <div class="row">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-10">
-          <% if devise_mapping.rememberable? %>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
+        <div class="col-xs-6"></div>
+        <div class="col-xs-4">
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "=> パスワードを忘れた方はコチラ", new_password_path(resource_name) %><br />
           <% end %>
         </div>
         <div class="row actions">
-          <%= f.submit "Log in", class: "btn btn-success"%>
+          <div class="col-xs-4"></div>
+          <div class="col-xs-2">
+            <%= f.submit "ログイン", class: "btn btn-success customer_login_button"%>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-4">
+            <h3>登録がお済みでない方</h3>
+          </div>
+        </div>
+        <div class="row empty_align">　</div>
+        <div class="row">
+          <div class="col-xs-3"></div>
+          <div class="col-xs-4">
+            <p><%= link_to "こちら",new_customer_registration_path %>　から新規登録を行ってください。
+          </div>
+        </div>
+
       </div>
     <% end %>
   </div>
 </div>
 
-<%= render "customers/shared/links" %>
+
