@@ -13,6 +13,11 @@ class Public::OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @orderd_products = @order.orderd_products
+    @order_price = 0
+    @orderd_products.each do |orderd_product|
+      price = orderd_product.product.price * orderd_product.amount * 1.08
+      @order_price += price
+    end
   end
 
   def confirm
@@ -64,5 +69,4 @@ class Public::OrdersController < ApplicationController
   def select_shipping_params
     params.require(:order).permit(:select_shipping)
   end
-  
 end

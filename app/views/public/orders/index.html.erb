@@ -18,10 +18,11 @@
 			<td><%= order.address %></td>
 			<td>
 			<% order.orderd_products.each do |orderd_product| %>
+				<%= attachment_image_tag orderd_product.product, :image, :fill, 20, 20 %>
 				<%= orderd_product.product.name %><br>
 			<% end %>
 			</td>
-			<td><%= order.total_price %></td>
+			<td><%= order.total_price %>円</td>
 			<td><%= order.status %></td>
 			<td>
 				<%= link_to '表示する', public_order_path(order), class:'btn btn-primary' %>
