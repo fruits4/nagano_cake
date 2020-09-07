@@ -18,10 +18,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
   	resources :products
+    resources :customers, only: [:index, :show, :update, :edit]
     resources :genres, only: [:index, :create, :update, :edit] do
       patch '/:id/edit' => 'genres#update'
     end
     get 'top' => 'top#top'
+    resources :orders, only: [:index, :show, :update]
   end
 
   namespace :public do

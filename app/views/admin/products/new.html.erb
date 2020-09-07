@@ -22,7 +22,7 @@
 
  <div class = "field">
  	<%= f.label :genre_id, "ジャンル" %>
- 	<%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: "もう早く選択してよ〜"},{class: 'form-control',required: true}%>
+ 	<%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: "選択してください"},{class: 'form-control',required: true}%>
  </div>
 
  <div class = "field">
@@ -32,7 +32,7 @@
 
  <div class = "from-group">
  	<%= f.label :status, "販売ステータス" %>
- 	<%= f.select :status,{"品切れ": 0,"販売中": 1},{include_blank: "もう早く選択してよ〜"},{class: 'form-control',required: true} %>
+ 	<%= f.select :status,{"品切れ": 0,"販売中": 1},{include_blank: "選択してください"},{class: 'form-control',required: true} %>
  </div>
 
  <div class = "col-xs-4">

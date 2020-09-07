@@ -1,29 +1,33 @@
-<div class="container">
-	<div class="row">
-		<div class="col-xs-3">
-			<%= render 'side_genre' %>
+<div class="row">
+	<div class="col-xs-3">
+		<%= render 'side_genre' %>
+	</div>
+	<div class="col-xs-9">
+		<div class="public_top_intro">
+			<div class="intro_box">
+				<p class="top_intro">
+					ようこそ、NaganoCakeへ！<br>
+					このサイトは、ケーキ販売のECサイトになります。<br>
+					会員でない方も商品の閲覧はできますが、<br>
+					購入には会員登録が必要になります。
+				</p>
+			</div>
 		</div>
-		<div class="col-xs-9">
-			<div class="public_top_intro">
-				<div class="intro_box">
-					<p class="top_intro">
-						ようこそ、NaganoCakeへ！<br>
-						このサイトは、ケーキ販売のECサイトになります。<br>
-						会員でない方も商品の閲覧はできますが、<br>
-						購入には会員登録が必要になります。
-					</p>
-				</div>
-			</div>
-			<div class="osusume">
-				<h2>おすすめの商品</h2>
-				<% @products.each do |product| %>
-					<div class="osusume_box">
-						<div class="osusume_img"><%= attachment_image_tag product, :image, :fill, 200, 150, format: "jpg "%></div>
-						<div class="osusume_name"><%= link_to product.name, public_product_path(product.id), class: public_osusume %></div>
-						<div class="price">￥<%= product.price %></div>
+		<h2>おすすめの商品</h2>
+		<div class="osusume row">
+			<% @products.each do |product| %>
+				<div class="osusume_box col-xs-2">
+					<div class="osusume_img">
+						<%= attachment_image_tag product, :image, :fill, 100, 80, format: "jpg" %>
 					</div>
-				<% end %>
-			</div>
+					<div class="osusume_name">
+						<%= link_to public_product_path(@products) do %>
+							<%= product.name %>
+						<% end %>
+					</div>
+					<div class="price">￥<%= product.price %></div>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>
