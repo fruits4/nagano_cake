@@ -5,12 +5,13 @@
 		</div>
 		<div class="col-xs-9">
 			<h2 class="row">
-				<% if @genre.nil? %>
-					商品一覧(全<%= @pdcount.count %>件)
+				<% if @genre.present? %>
+					<%= @genre.name %>一覧(全<%= @products.count %>件)
 				<% else %>
-					<%= @genre.name %>一覧(全<%= @product.count %>件)
+					商品一覧(全<%= @pdcount.count %>件)
 				<% end %>
 			</h2>
+			<div class="row empty_align">　</div>
 				<% @products.each do |product| %>
 					<div class="pb_products_list col-xs-3">
 						<div><%= attachment_image_tag product, :image, :fill, 200, 150, format: "jpg" %></div>
@@ -21,8 +22,13 @@
 						<div>￥<%= product.price %></div>
 					</div>
 				<% end %>
+			</div>
+			<div class="row">
+				<div class="col-xs-2"></div>
+				<div class="col-xs-3">
+					<%= paginate @products %>
+				</div>
 
-				<%= paginate @products %>
 			</div>
 		</div>
 	</div>
