@@ -9,6 +9,6 @@
 	<h4>税込価格（税抜価格) <%= @product.price %>（税込）円(<%= @product.price %>円)</h4>
 	<h4>販売ステータス <%= @product.status ? "販売中" : "在庫なし" %></h4>
 
-  <%= link_to "編集",edit_admin_product_path(@product),class: "btn btn-warning" %><br>
+  <%= link_to "編集", edit_admin_product_path(@product), class: "btn btn-warning" %><br>
 </div>
 </div>
