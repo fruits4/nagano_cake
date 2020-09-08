@@ -52,6 +52,8 @@ class Public::OrdersController < ApplicationController
           @orderd_product.price = cart_item.product.price
           @orderd_product.save
         end
+        current_customer.cart_items.destroy_all
+
       end
 
       redirect_to complete_public_orders_path

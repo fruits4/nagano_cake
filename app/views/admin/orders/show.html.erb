@@ -43,9 +43,10 @@
 							<% total_price = taxed_price * orderd_product.amount %>
 							<%= total_price.to_i %>
 						</td>
-						<%= form_with(model: orderd_product, local: true, url: admin_orderd_product_path(orderd_product.id), method: :patch) do |f| %>
+						<%= form_with model: orderd_product, local: true, url: admin_orderd_product_path, method: :patch do |f| %>
 						<td>
 							<%= f.select :status, OrderdProduct.statuses.keys %>
+							<%= hidden_field_tag :fruit, orderd_product.id %>
 						</td>
 						<td>
 							<%= f.submit "更新" %>
