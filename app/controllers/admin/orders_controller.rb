@@ -6,6 +6,7 @@ class Admin::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
+		@orderd_products = @order.orderd_products
 	end
 
 	def update
