@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get 'serch' => 'search#search'
     get 'top' => 'top#top'
     resources :orders, only: [:index, :show, :update]
+    resources :orderd_products, only: [:update]
   end
 
   namespace :public do
