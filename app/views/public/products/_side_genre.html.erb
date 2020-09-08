@@ -6,7 +6,7 @@
 		<tr>
 			<td class="side_genres_items">
 				<% @genres.each do |genre| %>
-				<%= link_to genre.name, public_products_path, class: "side_genres_words"%>
+					<span class="glyphicon glyphicon-tag side_ico"></span><%= link_to genre.name, public_products_path(:para => genre.id), class: "side_genres_words" %>
 				<br>
 				<% end %>
 			</td>

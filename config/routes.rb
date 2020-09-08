@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :update, :edit] do
       patch '/:id/edit' => 'genres#update'
     end
+    get 'serch' => 'search#search'
     get 'top' => 'top#top'
     resources :orders, only: [:index, :show, :update]
     resources :orderd_products, only: [:update]

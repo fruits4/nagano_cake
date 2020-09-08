@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/18f4d5da3c.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -59,6 +60,15 @@
                 <span>ログアウト</span>
               <% end %>
             </li>
+            <div class="search-group pull-right">
+          <%= form_tag(admin_serch_path, method: :get) do %>
+          <div class="input-group">
+                <%= select_tag(:model, options_for_select([["Product", "1"], ["Customer", "2"]])) %>
+                <%= text_field_tag :search %>
+                  <%= button_tag "", class: 'btn btn-primary glyphicon glyphicon-search' %>
+            </div>
+          <% end %>
+        </div>
           <% else %>
             <li class="nav-item">
               <%= link_to about_path do %>
