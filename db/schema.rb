@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2020_09_05_022523) do
     t.integer "order_id"
     t.integer "price"
     t.integer "amount"
-    t.integer "status", default: 0
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
