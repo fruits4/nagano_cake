@@ -29,7 +29,7 @@
         <div class="col-xs-6"></div>
         <div class="col-xs-4">
           <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to "=> パスワードを忘れた方はコチラ", new_password_path(resource_name) %><br />
+            <%= link_to "=> パスワードを忘れた方はコチラ", new_customer_password_path(resource_name) %><br />
           <% end %>
         </div>
         <div class="row actions">
