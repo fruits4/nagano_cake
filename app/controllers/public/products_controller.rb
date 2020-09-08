@@ -19,12 +19,7 @@ class Public::ProductsController < ApplicationController
 	end
 
 	def top
-		# @genres = Genre.all
 		@genres = Genre.all.where.not(is_active: "false")
 		@products = Product.where.not(status: "false").shuffle.take(4)
 	end
-
-	# def search
-	# 	@products = Product.search(params[:search])
-	# end
 end

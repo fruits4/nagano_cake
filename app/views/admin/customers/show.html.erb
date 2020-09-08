@@ -1,19 +1,19 @@
 <div class="container">
-
-<h4><%= @customer.last_name %> <%= @customer.first_name %>さんの会員詳細</h4>
 <div class = "row">
-<table>
+<h4><%= @customer.last_name %> <%= @customer.first_name %>さんの会員詳細</h4>
+<div class = "row mt-3">
+<div class="offset-sm-1 col-sm-7">
+
+<table class="table table-borderless">
   <tbody>
 	<tr>
 		<th>顧客ID</th>
 <!--------------------- 機能追加 --------------------->
 		<td>
 			<%= @customer.id %>
-			<% if @customer.is_deleted == false %>
-			<td><span class = "badge" style = "background :blue">会員（有効）</span></td>
-			<% else %>
-			<td><span class = "badge" style = "background :red">退会済</span></td>
-			<% end %>
+			<td>
+			<%= @customer.is_deleted ? '無効' : '有効' %>
+			</td>
 		</td>
 	</tr>
 	<tr>
@@ -22,6 +22,7 @@
 		<%= @customer.last_name %> <%= @customer.first_name %>
 	    </td>
 	</tr>
+
 	<tr>
 		<th>フリガナ</th>
 		<td>
@@ -52,6 +53,7 @@
 
 <%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn_primary col-xs-1" %>
 <%= link_to "注文履歴一覧を見る", public_orders_path, class: "btn_primary col-xs-2" %>
+</div>
 </div>
 </div>
 
