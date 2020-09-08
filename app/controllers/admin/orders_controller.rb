@@ -6,13 +6,12 @@ class Admin::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
-		@orderd_products = @order.orderd_products
 	end
 
 	def update
 		@order = Order.find(params[:id])
 		@order.update(orders_params)
-		@orderd_products = @order.orderd_products.all
+		@orderd_products = @order.orderd_products
 		redirect_to admin_order_path(@order.id)
 		if @order.status == "入金確認"
 			@orderd_products.each do |orderd_product|
