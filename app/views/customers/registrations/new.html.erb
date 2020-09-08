@@ -41,12 +41,12 @@
 
       <div class="row customer_font_sizing">
         <p class="col-xs-4">電話番号(ハイフンなし)</p>
-        <div class="col-xs-8"><%= f.text_field :phone_number %></div>
+        <div class="col-xs-8"><%= f.text_field :phone_number, :placeholder => "09012345678" %></div>
       </div>
 
       <div class="row customer_font_sizing">
         <p class="col-xs-4">パスワード(6文字以上)</p>
-        <div class="col-xs-8"><%= f.password_field :password, autocomplete: "new-password" %></div>
+        <div class="col-xs-8"><%= f.password_field :password, autocomplete: "new-password", :placeholder => "6文字以上" %></div>
       </div>
 
       <div class="row customer_font_sizing">
