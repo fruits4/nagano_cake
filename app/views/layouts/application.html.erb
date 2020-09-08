@@ -60,6 +60,15 @@
                 <span>ログアウト</span>
               <% end %>
             </li>
+            <div class="search-group pull-right">
+          <%= form_tag(admin_serch_path, method: :get) do %>
+          <div class="input-group">
+                <%= select_tag(:model, options_for_select([["Product", "1"], ["Customer", "2"]])) %>
+                <%= text_field_tag :search %>
+                  <%= button_tag "", class: 'btn btn-primary glyphicon glyphicon-search' %>
+            </div>
+          <% end %>
+        </div>
           <% else %>
             <li class="nav-item">
               <%= link_to about_path do %>
@@ -83,17 +92,7 @@
             </li>
           <% end %>
         </ul>
-        <div class="search-group">
-          <%= form_tag(admin_serch_path, method: :get) do %>
-                <%= select_tag(:model, options_for_select([["Product", "1"], ["Customer", "2"]])) %>
-            <div class="input-group">
-                <%= text_field_tag :search %>
-                  <%= button_tag "", class: 'btn btn-primary glyphicon glyphicon-search' %>
-            </div>
-          <% end %>
-        </div>
       </div>
-
     </nav>
 
     <main>
