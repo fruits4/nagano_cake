@@ -31,12 +31,12 @@
 
       <div class="row customer_font_sizing">
         <p class="col-xs-4">郵便番号(ハイフンなし)</p>
-        <div class="col-xs-3"><%= f.text_field :post_code, :placeholder => "1234567" %></div>
+        <div class="col-xs-3"><%= f.text_field :post_code, :placeholder => "1234567", id: "postcode" %></div>
       </div>
 
       <div class="row customer_font_sizing">
         <p class="col-xs-4">住所</p>
-        <div clasS="col-xs-8"><%= f.text_field :address, class: "col-xs-10", :placeholder => "東京都杉並区1-1-1　グランドハイム西川" %></div>
+        <div clasS="col-xs-8"><%= f.text_field :address, class: "col-xs-10", :placeholder => "東京都杉並区1-1-1　グランドハイム西川", id: "address" %></div>
       </div>
 
       <div class="row customer_font_sizing">

@@ -15,3 +15,15 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+$(function() {
+  $(document).on('turbolinks:load', () => {
+    $('#user_postcode').jpostal({
+      postcode : [
+        '#postcode'
+      ],
+      address: {
+        "#address"           : "%3%4%5", // # 市区町村と町域が入力される
+      }
+    });
+  });
+});
