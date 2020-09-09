@@ -18,14 +18,12 @@
 			<% @products.each do |product| %>
 				<div class="osusume_box col-xs-2">
 					<div class="osusume_img">
-						<%= attachment_image_tag product, :image, :fill, 100, 80, format: "jpg" %>
-					</div>
-					<div class="osusume_name">
 						<%= link_to public_product_path(@products) do %>
-							<%= product.name %>
+							<%= attachment_image_tag product, :image, :fill, 100, 80, format: "jpg" %>
 						<% end %>
+						<%= product.name %>
 					</div>
-					<div class="price">￥<%= product.price %></div>
+					<div class="price">￥<%= (product.price * 1.08).to_i %></div>
 				</div>
 			<% end %>
 		</div>

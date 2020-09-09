@@ -13,7 +13,9 @@
   <body>
     <nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <span class="header-logo">ながのCake</span>
+        <%= link_to public_path do %>
+          <span class="header-logo">ながのCake</span>
+        <% end %>
         <ul class="nav navbar-nav navbar-right nav-hover">
           <% if customer_signed_in?%>
             <li class="nav-item nav-name">
@@ -39,14 +41,20 @@
                 <span>ログアウト</span>
               <% end %>
             </li>
+
           <% elsif admin_signed_in? %>
             <li class="nav-item">
-              <%= link_to public_products_path do %>
+              <%= link_to admin_products_path do %>
                 <span>商品一覧</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to public_orders_path do %>
+              <%= link_to admin_customers_path do %>
+                <span>会員一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_orders_path do %>
                 <span>注文履歴一覧</span>
               <% end %>
             </li>
@@ -76,7 +84,7 @@
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to public_products_path do %>
+              <%= link_to admin_products_path do %>
                 <span>商品一覧</span>
               <% end %>
             </li>
