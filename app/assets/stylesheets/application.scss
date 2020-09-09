@@ -31,7 +31,20 @@ nav ul {
 .header-logo {
 	font-size: 50px;
 	line-height: 100px;
+	position: absolute;
+	top: 0;
+	left: 70px;
 }
+.logo{
+	position: absolute;
+	top: 17px;
+	left: 0;
+}
+
+.a{
+	position: relative;
+}
+
 
 .nav-name {
 	padding-top: 10px;
