@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ながのCake</title>
+    <%= favicon_link_tag 'favicon.ico' %>
+  <title>ながのCake</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,9 +14,12 @@
   <body>
     <nav class="navbar navbar-fixed-top">
       <div class="container">
+        <div class = "a">
         <%= link_to public_path, :style=>"color:#e6e6fa;""text-decoration:none;" do %>
-          <span class="header-logo">長野Cake</span>
+        <img class = "logo", src="/assets/logo.png", width="70px", height="70px">
+           <span class="header-logo">長野Cake</span>
         <% end %>
+      </div>
         <ul class="nav navbar-nav navbar-right nav-hover">
           <% if customer_signed_in?%>
             <li class="nav-item nav-name header-item">
