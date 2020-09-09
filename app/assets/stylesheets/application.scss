@@ -145,29 +145,30 @@ footer {
 }
 
 //public/top
-.public_top_intro {
-	width: 600px;
-	height: 300px;
-	background-color: pink;
+#container {
+	width: 1200px;
+	height: 600px;
 	text-align: center;
 }
 
 .top_intro {
-	font-size: 14px;
-	color: #FFF;
-
+	font-size: 18px;
+	color: black;
 }
 
 .intro_box {
-	border: medium solid orange;
-	background-color: blue;
-	opacity: 0.5;
-	padding: 30px 0;
-	text-align: left;
-	display: inline-block;
-	vertical-align: middle;
-	margin: 80px auto;
+	width: 1200px;
+	position: absolute;
+	height: 150px;
+	background-color: rgba(253, 240, 244, 0.5);
+  	background-size: cover;
+	top: 450px;
+  	left: 15px;
+  	padding-top: 30px;
+  	z-index: 1000;
+  	
 }
+
 
 //public/products詳細画面
 .public_price_font_size {
@@ -238,4 +239,17 @@ footer {
 .tyuui_zeikomi {
 	font-size: 10px;
 	color: red;
+}
+
+.image1 {
+  background-image: url(image1.jpg);
+}
+.image2 {
+  background-image: url(image2.jpg);
+}
+.image3 {
+  background-image: url(image3.jpg);
+}
+.image4 {
+  background-image: url(image4.jpg);
 }

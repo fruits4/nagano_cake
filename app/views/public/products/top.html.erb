@@ -1,9 +1,6 @@
 <div class="row">
-	<div class="col-xs-3">
-		<%= render 'side_genre' %>
-	</div>
-	<div class="col-xs-9">
-		<div class="public_top_intro">
+	<div class="col-xs-12">
+		<div id="container">
 			<div class="intro_box">
 				<p class="top_intro">
 					ようこそ、NaganoCakeへ！<br>
@@ -12,7 +9,17 @@
 					購入には会員登録が必要になります。
 				</p>
 			</div>
+			 <div id="theTarget">
+			    <div class="image1"></div>
+			    <div class="image2"></div>
+			    <div class="image3"></div>
+			    <div class="image4"></div>
+		   	</div>
 		</div>
+		</div>
+		<div class="col-xs-3">
+		<%= render 'side_genre' %>
+	</div>
 		<h2>おすすめの商品</h2>
 		<div class="osusume row">
 			<% @products.each do |product| %>
