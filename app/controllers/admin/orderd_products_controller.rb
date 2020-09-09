@@ -7,7 +7,7 @@ class Admin::OrderdProductsController < ApplicationController
 		@orderd_products = @order.orderd_products
 
 		if @orderd_products.find_by(status: "製作中")
-			@order.update(status: "制作中")
+			@order.update(status: "製作中")
 			redirect_to admin_order_path(@order)
 
 		else
