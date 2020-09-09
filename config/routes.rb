@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   devise_for :customers, controllers: {
     sessions: 'customers/sessions',
     registrations: 'customers/registrations',
-    passwords: 'customers/passwords'
-  }
+    passwords: 'customers/passwords'}
 
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',

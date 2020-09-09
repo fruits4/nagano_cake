@@ -1,6 +1,8 @@
 <div class = "row">
 	<div class = "col-xs-2 pull-right">
-	<%= link_to "新規登録", new_admin_product_path, class: "origin-btn" %>
+	<%= link_to new_admin_product_path, class: "origin-btn" do %>
+		<i class="fas fa-candy-cane"></i>＜新規登録だよ！
+	<% end %>
 </div>
 <div class = "col-xs-10">
 	<h1>商品一覧</h1>
