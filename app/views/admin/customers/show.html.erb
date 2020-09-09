@@ -11,9 +11,9 @@
 <!--------------------- 機能追加 --------------------->
 		<td>
 			<%= @customer.id %>
-			<td>
+		</td>
+		<td>
 			<%= @customer.is_deleted ? '無効' : '有効' %>
-			</td>
 		</td>
 	</tr>
 	<tr>
@@ -21,6 +21,7 @@
 		<td>
 		<%= @customer.last_name %> <%= @customer.first_name %>
 	    </td>
+	    <td></td>
 	</tr>
 
 	<tr>
@@ -28,21 +29,27 @@
 		<td>
 		<%= @customer.last_name_kana %> <%= @customer.first_name_kana %>
 	    </td>
+	    <td></td>
 	</tr>
 	<tr>
 		<th>郵便番号</th>
 		<td><%= @customer.post_code %></td>
+		<td></td>
 	</tr>
 	<tr>
 		<th>住所</th>
 		<td><%= @customer.address %></td>
+		<td></td>
 	</tr>
-	<th>電話番号</th>
-	<td><%= @customer.phone_number %></td>
+	<tr>
+		<th>電話番号</th>
+		<td><%= @customer.phone_number %></td>
+		<td></td>
 	</tr>
 	<tr>
 		<th>メールアドレス</th>
 		<td><%= @customer.email %></td>
+		<td></td>
 	</tr>
   </tbody>
 </table>
