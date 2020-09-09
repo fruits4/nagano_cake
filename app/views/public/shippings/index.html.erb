@@ -8,11 +8,11 @@
         <table class="table table-bordered">
         <tr>
 		    <th>郵便番号（ハイフンなし）</th>
-        <td><%= f.text_field :post_code %></td>
+        <td><%= f.text_field :post_code, id: "postcode" %></td>
 	      </tr>
         <tr>
 		    <th>住所</th>
-        <td><%= f.text_field :address %></td>
+        <td><%= f.text_field :address, id: "address" %></td>
 	      </tr>
         <tr>
           <th>宛名</th>
