@@ -31,4 +31,13 @@ class Customers::PasswordsController < Devise::PasswordsController
   # def after_sending_reset_password_instructions_path_for(resource_name)
   #   super(resource_name)
   # end
+
+  before_action :update_resource, if: :devise_controller?
+
+  protected
+
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
 end
