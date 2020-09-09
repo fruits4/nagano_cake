@@ -18,8 +18,6 @@ class Admin::OrdersController < ApplicationController
 			@orderd_products.each do |orderd_product|
 				orderd_product.update(status: "製作待ち")
 			end
-		else
-			render :show
 		end
 	end
 

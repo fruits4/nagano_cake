@@ -4,7 +4,9 @@
 
 		<%= form_with model: @order, local: true, url: admin_order_path(@order), method: :patch do |f| %>
 			<h3 class="#">購入者</h3>
-			<%= @order.name %>
+			<%= link_to admin_customer_path(@order.customer.id) do %>
+				<%= @order.name %>
+			<% end %>
 
 			<h3 class="#">配送先</h3>
 			<%= @order.post_code %><br>
