@@ -11,82 +11,82 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar navbar-fixed-top">
       <div class="container">
         <%= link_to public_path, :style=>"color:#e6e6fa;""text-decoration:none;" do %>
-          <span class="header-logo">ながのCake</span>
+          <span class="header-logo">長野Cake</span>
         <% end %>
         <ul class="nav navbar-nav navbar-right nav-hover">
           <% if customer_signed_in?%>
-            <li class="nav-item nav-name">
+            <li class="nav-item nav-name header-item">
               <span>ようこそ<%= current_customer.last_name %><%= current_customer.first_name %>さん</span>
             </li>
             <li class="nav-item">
-              <%= link_to my_page_public_customers_path do %>
+              <%= link_to my_page_public_customers_path, class: " header-item" do %>
                 <span>マイページ</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to public_products_path do %>
+              <%= link_to public_products_path, class: " header-item" do %>
                 <span>商品一覧</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to public_cart_items_path do %>
+              <%= link_to public_cart_items_path, class: " header-item" do %>
                 <span>カート</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to destroy_customer_session_path, method: :delete do %>
+              <%= link_to destroy_customer_session_path, method: :delete, class: " header-item" do %>
                 <span>ログアウト</span>
               <% end %>
             </li>
 
           <% elsif admin_signed_in? %>
             <li class="nav-item">
-              <%= link_to admin_products_path do %>
+              <%= link_to admin_products_path, class: " header-item" do %>
                 <span>商品一覧</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to admin_customers_path do %>
+              <%= link_to admin_customers_path, class: " header-item" do %>
                 <span>会員一覧</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to admin_orders_path do %>
+              <%= link_to admin_orders_path, class: " header-item" do %>
                 <span>注文履歴一覧</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to admin_genres_path do %>
+              <%= link_to admin_genres_path, class: " header-item" do %>
                 <span>ジャンル一覧</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to destroy_admin_session_path, method: :delete do %>
+              <%= link_to destroy_admin_session_path, method: :delete, class: " header-item" do %>
                 <span>ログアウト</span>
               <% end %>
             </li>
             
           <% else %>
             <li class="nav-item">
-              <%= link_to about_path do %>
+              <%= link_to about_path, class: " header-item" do %>
                 <span>About</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to admin_products_path do %>
+              <%= link_to admin_products_path, class: " header-item" do %>
                 <span>商品一覧</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to new_customer_registration_path do %>
+              <%= link_to new_customer_registration_path, class: " header-item" do %>
                 <span>新規登録</span>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to new_customer_session_path do %>
+              <%= link_to new_customer_session_path, class: " header-item" do %>
                 <span>ログイン</span>
               <% end %>
             </li>
