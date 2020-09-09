@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ながのCake</title>
+    <%= favicon_link_tag 'favicon.ico' %>
+  <title>ながのCake</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,11 +12,14 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-fixed-top">
+    <nav class="navbar">
       <div class="container">
+        <div class = "a">
         <%= link_to public_path, :style=>"color:#e6e6fa;""text-decoration:none;" do %>
-          <span class="header-logo">長野Cake</span>
+        <img class = "logo", src="/assets/logo.png", width="70px", height="70px">
+           <span class="header-logo">長野Cake</span>
         <% end %>
+      </div>
         <ul class="nav navbar-nav navbar-right nav-hover">
           <% if customer_signed_in?%>
             <li class="nav-item nav-name header-item">
@@ -75,7 +79,7 @@
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to admin_products_path, class: " header-item" do %>
+              <%= link_to public_products_path, class: " header-item" do %>
                 <span>商品一覧</span>
               <% end %>
             </li>
@@ -91,28 +95,33 @@
             </li>
           <% end %>
         </ul>
-        <% if admin_signed_in? %>
-          <div class="search-group pull-right">
-            <%= form_tag(admin_serch_path, method: :get) do %>
-              <div class="input-group">
-                <%= select_tag(:model, options_for_select([["Product", "1"], ["Customer", "2"]])) %>
-                <%= text_field_tag :search %>
-                <%= button_tag "", class: 'btn btn-primary glyphicon glyphicon-search' %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
       </div>
     </nav>
 
     <main>
       <div class="container">
+        <% if admin_signed_in? %>
+          <div class="pull-right">
+            <%= form_tag(admin_serch_path, method: :get) do %>
+                <%= select_tag(:model, options_for_select([["商品", "1"], ["顧客", "2"]])) %>
+                <%= text_field_tag :search %>
+                <%= button_tag "", class: "search-button" do %>
+                  <i class="fas fa-search"></i>
+                <% end %>
+            <% end %>
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     </main>
+    <span id="back">
+      <a href="#">
+        <i class="fas fa-hand-point-up"></i>
+      </a>
+    </span>
 
     <footer>
-      <p>Footer!!!!</p>
+      <p>Nagano cake co.,ltd.©</p>
     </footer>
   </body>
 </html>

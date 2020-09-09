@@ -3,7 +3,7 @@
 		<div id="container">
 			<div class="intro_box">
 				<p class="top_intro">
-					ようこそ、NaganoCakeへ！<br>
+					ようこそ、<strong>NaganoCake</strong>へ！<br>
 					このサイトは、ケーキ販売のECサイトになります。<br>
 					会員でない方も商品の閲覧はできますが、<br>
 					購入には会員登録が必要になります。
@@ -25,7 +25,7 @@
 			<% @products.each do |product| %>
 				<div class="osusume_box col-xs-2">
 					<div class="osusume_img">
-						<%= link_to public_product_path(@products) do %>
+						<%= link_to public_product_path(product) do %>
 							<%= attachment_image_tag product, :image, :fill, 100, 80, format: "jpg" %>
 						<% end %>
 						<%= product.name %>
