@@ -76,3 +76,5 @@ gem 'jp_prefecture'
 gem 'rubocop-airbnb'
 
 gem 'kaminari', '~> 0.17.0'
+
+gem 'rails-i18n'
