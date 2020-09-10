@@ -1,6 +1,16 @@
 <!-- 配送先編集画面 -->
 
 <div class="edit-container" style="width:50%; margin: 20px auto;">
+    <% if @shipping.errors.any? %>
+      <div id="error_explanation" class="text-danger">
+        <h3><%= @shipping.errors.count %>error prohibited this obj from being saved:</h3>
+        <ul>
+          <% @shipping.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
   <!-- 編集フォーム見出し -->
   <h2>配送先編集</h2>
