@@ -13,7 +13,7 @@
 		<div class="row empty_align">　</div>
 		<div class="row">
 			<% @products.each do |product| %>
-				<div class="pb_products_list col-xs-3">
+				<div class=" col-xs-3">
 					<div><%= link_to attachment_image_tag( product, :image, :fill, 160, 140, format: "jpg" ), public_product_path(product.id) %></div>
 					<div><%= link_to public_product_path(product.id) do %>
 							<P class="products_index_name"><%= product.name %></P>
