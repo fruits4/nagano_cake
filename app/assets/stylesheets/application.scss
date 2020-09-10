@@ -64,7 +64,7 @@ p, ol, ul, td {
 
 //header
 
-.header-logo, .header-item {
+.header-logo, .header-item, h2 {
 	list-style: none;
 	color: #3a4660;
 	font-family: "游明朝", YuMincho,;
@@ -304,6 +304,7 @@ footer {
 
 .success-btn {
 	color: #28a745;
+	background-color: #fff;
 	border: solid 1px #28a745;
 }
 
@@ -320,3 +321,19 @@ select {
 	background-size: 18px 18px;
 	background-position: right 10px center;
 }
+
+.admin_genre_head {
+	font-size: 20px;
+	border-bottom: solid 2px #000;
+}
+
+.admin_genre_body {
+	font-size: 18px;
+	border-bottom: solid 1px #ccc;
+}
+
+.genre_td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
