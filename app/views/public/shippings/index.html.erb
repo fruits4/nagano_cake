@@ -1,6 +1,16 @@
 <!-- 配達先登録/一覧画面を表示する　-->
 <div class="container">
  <div class="index-container" style="width:60%; margin: 20px auto;">
+    <% if @shipping.errors.any? %>
+      <div id="error_explanation" class="text-danger">
+        <h3><%= @shipping.errors.count %>error prohibited this obj from being saved:</h3>
+        <ul>
+          <% @shipping.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
   <!-- 配送先登録フォーム -->
   <h2>配送先/一覧</h2>
