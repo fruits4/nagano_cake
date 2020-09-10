@@ -6,11 +6,11 @@
 		<h4><strong>注文情報</strong></h4>
 		<table class="table table-bordered">
 			<tr>
-				<th class="info col-xs-2">注文日</th>
+				<th class="table-color col-xs-2">注文日</th>
 				<td><%= @order.created_at.strftime("%Y/%m/%d") %></td>
 			</tr>
 			<tr>
-				<th class="info">配送先</th>
+				<th class="table-color">配送先</th>
 				<td>
 					<%= @order.post_code %><br>
 					<%= @order.address %><br>
@@ -18,11 +18,11 @@
 				</td>
 			</tr>
 			<tr>
-				<th class="info">支払い方法</th>
+				<th class="table-color">支払い方法</th>
 				<td><%= @order.payment %></td>
 			</tr>
 			<tr>
-				<th class="info">ステータス</th>
+				<th class="table-color">ステータス</th>
 				<td><%= @order.status %></td>
 			</tr>
 		</table>
@@ -31,15 +31,15 @@
 		<h4><strong>請求情報</strong></h4>
 		<table class="table table-bordered">
 			<tr>
-				<th class="info">商品合計</th>
+				<th class="table-color">商品合計</th>
 				<td><%= @order_price.to_i %>円</td>
 			</tr>
 			<tr>
-				<th class="info">配送料</th>
+				<th class="table-color">配送料</th>
 				<td><%= @order.shipping_cost %>円</td>
 			</tr>
 			<tr>
-				<th class="info">ご請求額</th>
+				<th class="table-color">ご請求額</th>
 				<td><%= @order.total_price %>円</td>
 			</tr>
 		</table>
@@ -47,7 +47,7 @@
 	<div class="col-xs-8">
 		<h4><strong>注文内容</strong></h4>
 		<table class="table table-bordered">
-			<tr class="info">
+			<tr class="table-color">
 				<th>商品</th>
 				<th>単価（税込）</th>
 				<th>個数</th>

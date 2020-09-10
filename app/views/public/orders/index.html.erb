@@ -2,7 +2,7 @@
 
 <table class="table table-bordered">
 	<thead>
-		<tr class="info">
+		<tr class="table-color">
 			<th>注文日</th>
 			<th>配送先</th>
 			<th>注文商品</th>
@@ -25,7 +25,7 @@
 			<td><%= order.total_price %>円</td>
 			<td><%= order.status %></td>
 			<td>
-				<%= link_to '表示する', public_order_path(order), class:'btn btn-primary' %>
+				<%= link_to '表示する', public_order_path(order), class:'btn primary-btn btn-sm' %>
 			</td>
 		</tr>
 		<% end %>
