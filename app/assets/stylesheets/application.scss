@@ -187,11 +187,11 @@ footer {
 .empty_align {
 	margin-top: 5px;
 }
-
+// OLD DESIGN
 // .pb_products_list {
 // 	position: relative;
-// 	background: #fff0cd;
-// 	box-shadow: 0px 0px 0px 5px #fff0cd;
+// 	background: #c9af98;
+// 	box-shadow: 0px 0px 0px 5px #c9af98;
 // 	border: dashed 2px white;
 // 	padding: 0.2em 0.5em;
 // 	color: #454545;
@@ -207,13 +207,16 @@ footer {
 // 	top: -7px;
 // 	border-width: 0 15px 15px 0;
 // 	border-style: solid;
-// 	border-color: #ffdb88 #fff #ffdb88;
+// 	border-color: #c9af98 #fff #c9af98;
 // 	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
 // }
 
-.pb_index_list {
-	margin: 2em 0;
+.item_border {
+	border: solid 2px #000;
+	width: 200px;
+	height: 60px;
 }
+
 
 .under_bar {
 	margin: 20px auto;
@@ -243,6 +246,7 @@ footer {
 
 .products_index_name {
 	font-size: 16px;
+	text-align: center;
 }
 
 .product_intro {
