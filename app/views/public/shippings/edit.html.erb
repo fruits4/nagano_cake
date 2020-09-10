@@ -1,9 +1,19 @@
 <!-- 配送先編集画面 -->
 
 <div class="edit-container" style="width:50%; margin: 20px auto;">
+    <% if @shipping.errors.any? %>
+      <div id="error_explanation" class="text-danger">
+        <h3><%= @shipping.errors.count %>error prohibited this obj from being saved:</h3>
+        <ul>
+          <% @shipping.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
   <!-- 編集フォーム見出し -->
-  <h3>配送先編集</h3>
+  <h2>配送先編集</h2>
 
   <!-- 編集フォーム -->
   <%= form_for(@shipping, url: public_shipping_path) do |f| %>
@@ -23,7 +33,7 @@
     </table>
 
     <!-- 編集確定ボタン -->
-    <%= f.submit "編集する", class:"btn btn-primary btn-md" %>
+    <%= f.submit "編集する", class:"btn primary-btn" %>
   <% end %>
 
 </div>

@@ -64,7 +64,7 @@ p, ol, ul, td {
 
 //header
 
-.header-logo, .header-item {
+.header-logo, .header-item, h2 {
 	list-style: none;
 	color: #3a4660;
 	font-family: "游明朝", YuMincho,;
@@ -278,17 +278,163 @@ footer {
 }
 
 .delete-btn {
-	color: #dc3545;
-	border: solid 1px #dc3545;
+	color: #c45c66;
+	border: solid 1px #c45c66;
+}
+
+.delete-btn:hover {
+  color: #ff7f7f;
+  border: solid 1px #ff7f7f;
 }
 
 .primary-btn {
-	color: #007bff;
+	color: #6389ad;
 	background-color: #fff;
-	border: solid 1px #007bff;
+	border: solid 1px #6389ad;
+}
+
+.primary-btn:hover {
+  color: #89b7e0;
+  border: solid 1px #89b7e0;
 }
 
 .success-btn {
-	color: #28a745;
-	border: solid 1px #28a745;
+	color: #638f6d;
+	background-color: #fff;
+	border: solid 1px #638f6d;
+}
+
+.table-color {
+	background-color: #ded2c8;
+}
+
+.select select {
+	font-size: 14px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding: 7px 30px 7px 10px;
+	line-height: 1.2em;
+	border-radius: 5px;
+	border: solid 1px #ded2c8;
+	background-image: url(yajirusi.jpg);
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: right 10px center;
+}
+
+.admin_genre_head {
+	font-size: 20px;
+	border-bottom: solid 2px #000;
+}
+
+.admin_genre_body {
+	font-size: 18px;
+	border-bottom: solid 1px #ccc;
+}
+
+.genre_td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.btn-square-shadow {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px #8fbd99;
+  border-right: solid 4px #8fbd99;
+  color: #8fbd99;
+  background: #FFF;
+  transition: .4s;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #FFF;/*ボタン色*/
+  color: #8fbd99;
+  border-bottom: solid 3px #4e6b54;
+  border-radius: 3px;
+}
+.btn-square-shadow:hover{
+  background: #FFF;
+  color: #81b58c;
+}
+
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+.btn-brackets {
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #c45c66;
+  transition: .4s;
+}
+.btn-brackets:hover {
+  color: #ff7f7f;
+}
+.btn-brackets:before, .btn-brackets:after {
+  position: absolute;
+  top: 0;
+  content:'';
+  width: 8px;
+  height: 100%;
+  display: inline-block;
+}
+.btn-brackets:before {
+  border-left: solid 1px #c45c66;
+  border-top: solid 1px #c45c66;
+  border-bottom: solid 1px #c45c66;
+  left: 0;
+}
+.btn-brackets:after {
+  content: '';
+  border-top: solid 1px #c45c66;
+  border-right: solid 1px #c45c66;
+  border-bottom: solid 1px #c45c66;
+  right: 0;
+}
+
+.btn-brackets2 {
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #6389ad;
+  transition: .4s;
+}
+.btn-brackets2:hover {
+  color: #89b7e0;
+}
+.btn-brackets2:before, .btn-brackets2:after {
+  position: absolute;
+  top: 0;
+  content:'';
+  width: 8px;
+  height: 100%;
+  display: inline-block;
+}
+.btn-brackets2:before {
+  border-left: solid 1px #6389ad;
+  border-top: solid 1px #6389ad;
+  border-bottom: solid 1px #6389ad;
+  left: 0;
+}
+.btn-brackets2:after {
+  content: '';
+  border-top: solid 1px #6389ad;
+  border-right: solid 1px #6389ad;
+  border-bottom: solid 1px #6389ad;
+  right: 0;
+}
+
+#container {
+	border: solid 1px #3a4660;
 }

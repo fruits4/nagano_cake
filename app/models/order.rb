@@ -16,5 +16,13 @@ class Order < ApplicationRecord
     	[post_code, address, name].join
   	end
 
+  	def total_amount
+		amount = 0
+        orderd_products.each do |orderd_product|
+        	amount += orderd_product.amount
+        end
+        return amount
+	end
+
 
 end
