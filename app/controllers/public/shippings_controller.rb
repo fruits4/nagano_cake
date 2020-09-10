@@ -1,5 +1,7 @@
 class Public::ShippingsController < ApplicationController
 
+  before_action :authenticate_customer!
+
     #配送先一覧
   def index
     	@shippings = current_customer.shippings

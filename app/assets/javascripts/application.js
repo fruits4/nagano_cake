@@ -56,5 +56,5 @@ $(function() {
 	    }, 800);
 	    event.preventDefault();
 	});
-});
+})
 
