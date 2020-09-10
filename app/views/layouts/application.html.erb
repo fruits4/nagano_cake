@@ -104,6 +104,7 @@
           <div class="pull-right">
             <%= form_tag(admin_serch_path, method: :get) do %>
                 <div class="input-group mb-3">
+                  <span class="text-danger"><%= flash[:search] %></span>
                   <%= select_tag(:model, options_for_select([["商品", "1"], ["顧客", "2"]]), style: 'height:26px;') %>
                   <%= text_field_tag :search %>
                   <%= button_tag "", class: "search-button" do %>
