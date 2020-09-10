@@ -1,6 +1,6 @@
 <div class="container">
 <div class = "row">
-<h4><%= @customer.last_name %> <%= @customer.first_name %>さんの会員詳細</h4>
+<h2><%= @customer.last_name %> <%= @customer.first_name %>さんの会員詳細</h2>
 <div class = "row mt-3">
 <div class="offset-sm-1 col-sm-7">
 
@@ -13,7 +13,7 @@
 			<%= @customer.id %>
 		</td>
 		<td>
-			<%= @customer.is_deleted ? '無効' : '有効' %>
+			<%= @customer.is_deleted ? '退会済' : '会員' %>
 		</td>
 	</tr>
 	<tr>
@@ -58,8 +58,8 @@
 
 </div>
 
-<%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn_primary col-xs-1" %>
-<%= link_to "注文履歴一覧を見る", public_orders_path, class: "btn_primary col-xs-2" %>
+<%= link_to "編集する", edit_admin_customer_path(@customer),  class:"btn primary-btn col-xs-1" %>
+<%= link_to "注文履歴一覧を見る", public_orders_path, class:"btn primary-btn col-xs-2" %>
 </div>
 </div>
 </div>

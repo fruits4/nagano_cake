@@ -1,6 +1,6 @@
 <div class = "row">
 	<div class = "col-xs-8">
-		<h1>商品新規登録</h1>
+		<h2>商品新規登録</h2>
 
  <%=form_for(@product, url: admin_products_path) do |f| %>
 
@@ -36,7 +36,7 @@
  </div>
 
  <div class = "col-xs-4">
- 	<%= f.submit "新規登録",class: 'btn origin-btn btn-block' %>
+ 	<%= f.submit "新規登録",class:'btn success-btn genre_edit_button' %>
  </div>
 
  <% end %>
