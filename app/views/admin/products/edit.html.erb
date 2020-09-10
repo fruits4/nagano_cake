@@ -1,17 +1,19 @@
 <div class = "row">
-	<div class = "col-xs-8">
 
-<h1>商品編集<h1>
+
+<h2>商品編集</h2>
 
 
 <%= form_for(@product, url: admin_product_path) do |f| %>
 
  <div class = "field">
+ 	<div class = "col-xs-5">
+
  	<%= f.label :image_id,"商品画像" %>
  	<%= attachment_image_tag(@product, :image, size: '200x200') %>
  	
  </div>
-
+<div class = "col-xs-6">
  <div class = "field">
  	<%= f.label :name,"商品名" %>
  	<%= f.text_field :name, class: "name" %>
@@ -37,10 +39,11 @@
  	<%= f.select :status,{"品切れ": 0,"販売中": 1},{include_blank: "選択してください"},{class: 'form-control',required: true} %>
  </div>
 
- <div class = "col-xs-4">
- 	<%= f.submit "変更を保存", class: 'btn origin-btn btn-block' %>
+ 	<%= f.submit "変更を保存", class: 'btn success-btn genre_edit_button' %>
 
  <% end %>
 </div>
 </div>
+</div>
+
 

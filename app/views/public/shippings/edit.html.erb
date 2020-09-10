@@ -13,7 +13,7 @@
     <% end %>
 
   <!-- 編集フォーム見出し -->
-  <h3>配送先編集</h3>
+  <h2>配送先編集</h2>
 
   <!-- 編集フォーム -->
   <%= form_for(@shipping, url: public_shipping_path) do |f| %>
@@ -33,7 +33,7 @@
     </table>
 
     <!-- 編集確定ボタン -->
-    <%= f.submit "編集する", class:"btn btn-primary btn-md" %>
+    <%= f.submit "編集する", class:"btn primary-btn" %>
   <% end %>
 
 </div>
