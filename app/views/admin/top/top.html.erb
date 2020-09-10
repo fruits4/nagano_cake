@@ -1,7 +1,9 @@
 <div class="container">
 	<div class="row">
 		<h2 class="admin-top-title">管理者画面</h2>
-		<p>本日の注文件数</p>
-		<%= link_to (@orders.count), admin_orders_path %>件
+		<div class="admin-top-box">
+			<h3>本日の注文件数</h3>
+			<%= link_to (@orders.count), admin_orders_path %>件
+		</div>
 	</div>
 </div>
