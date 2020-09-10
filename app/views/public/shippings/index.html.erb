@@ -3,7 +3,7 @@
  <div class="index-container" style="width:60%; margin: 20px auto;">
 
   <!-- 配送先登録フォーム -->
-  <h5>配送先/一覧</h5>
+  <h2>配送先/一覧</h2>
         <%= form_for(@shipping, url: public_shippings_path) do |f| %>
         <table class="table table-bordered">
         <tr>
@@ -20,7 +20,7 @@
         </tr>
       </table>
         <div style="desplay: inline;">
-        <%= f.submit "登録する" ,class:"btn btn-primary"%>
+        <%= f.submit "登録する" ,class:"btn success-btn"%>
         <% end %>
         </div>
 
@@ -37,8 +37,8 @@
       <td><%= shipping.name %></td>
       <!-- 編集・削除　-->
       <td>
-        <%= link_to '編集する',edit_public_shipping_path(shipping), class: "btn btn-primary" %>
-        <%= link_to '削除する', public_shipping_path(shipping),class: "btn btn-danger", method: :delete, 'data-confirm' => '本当に削除しますか？' %>
+        <%= link_to '編集する',edit_public_shipping_path(shipping), class: "btn primary-btn" %>
+        <%= link_to '削除する', public_shipping_path(shipping),class: "btn delete-btn", method: :delete, 'data-confirm' => '本当に削除しますか？' %>
       </td>
     </tr>
     <% end %>
