@@ -16,23 +16,31 @@
 			    <div class="image4"></div>
 		   	</div>
 		</div>
-		</div>
-		<div class="col-xs-3">
-		<%= render 'side_genre' %>
 	</div>
-		<h2>おすすめの商品</h2>
-		<div class="osusume row">
-			<% @products.each do |product| %>
-				<div class="osusume_box col-xs-2">
-					<div class="osusume_img">
-						<%= link_to public_product_path(product) do %>
-							<%= attachment_image_tag product, :image, :fill, 100, 80, format: "jpg" %>
-						<% end %>
-						<%= product.name %>
-					</div>
-					<div class="price">￥<%= (product.price * 1.08).to_i %></div>
-				</div>
-			<% end %>
+	<div class="empty_align">　</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<%= render 'side_genre' %>
 		</div>
+		<div class="col-xs-9">
+			<h2>おすすめの商品</h2>
+			<div class="empty_align">　</div>
+			<div class="row">
+				<% @products.each do |product| %>
+					<div class="col-xs-3">
+						<div class="osusume_img row">
+							<%= link_to public_product_path(product) do %>
+								<%= attachment_image_tag product, :image, :fill, 160, 140, format: "jpg" %>
+							<% end %>
+
+						</div>
+						<div class="row public_price_font_size ">
+							<%= product.name %>
+						</div>
+						<div class="emty_align">　</div>
+						<div class="public_price_font_size row">￥<%= (product.price * 1.08).to_i %></div>
+					</div>
+				<% end %>
+			</div>
 	</div>
 </div>
