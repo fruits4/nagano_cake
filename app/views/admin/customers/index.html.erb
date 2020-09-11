@@ -13,7 +13,6 @@
 					<th>会員ステータス</th>
 				</tr>
 			</thead>
-
 			<tbody>
 				<% @customers.each do |customer| %>
 					<tr>
@@ -24,6 +23,7 @@
 							<%= customer.first_name %>
 							<% end %>
 						</td>
+						<td><%= customer.last_name_kana %><%= customer.first_name_kana %></td>
 						<td><%= customer.email %></td>
 						<td>
 						<%= customer.is_deleted ? '退会済' : '会員' %>

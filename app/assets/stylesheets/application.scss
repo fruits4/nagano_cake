@@ -178,7 +178,6 @@ footer {
   	z-index: 1000;
 }
 
-
 //public/products詳細画面
 
 .empty_align {
@@ -189,6 +188,10 @@ footer {
 
 .index_all_item {
 	border: solid 2px #000;
+}
+
+.img_border {
+	border-radius: 50%;
 }
 
 .index_box {
