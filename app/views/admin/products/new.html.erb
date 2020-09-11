@@ -1,46 +1,51 @@
-<div class = "row">
-	<div class = "col-xs-8">
-		<h2>商品新規登録</h2>
+<div class="row">
+	<h2>商品新規登録</h2>
+	<%=form_for(@product, url: admin_products_path) do |f| %>
+		<div class="col-xs-5">
+			<div class="form-group">
+			 	<div class="item-image">
+			        <%= attachment_image_tag @product, :image, fallback: "logo.png", class: "img-square", size:"300x300" %>
+			    </div>
+			</div>
+			<div class="form-group">
+			 	<%= f.attachment_field :image, id: 'image' %>
+			</div>
+		</div>
+		<div class="col-xs-5">
+			<div class = "form-group row">
+			 	<%= f.label :name,"商品名", class: "col-sm-3" %>
+			 	<%= f.text_field :name, class: "name col-sm-6" %>
+			</div>
 
- <%=form_for(@product, url: admin_products_path) do |f| %>
+			<div class = "form-group row">
+			 	<%= f.label :explain, "商品説明", class: "col-sm-3" %>
+			 	<%= f.text_area :explain, class: "explain col-sm-6", size:'20x8' %>
+			</div>
 
- <div class = "field">
- 	<%= f.label :image_id,"商品画像" %>
- 	<%= f.attachment_field :image %>
+			<div class = "form-group row">
+			 	<%= f.label :genre_id, "ジャンル", class: "col-sm-3" %>
+			 	<div class="col-sm-7" style='margin-left: -18px'>
+			 		<%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: "選択してください"},{class: 'form-control',required: true}%>
+			 	</div>
+			</div>
 
- </div>
+			<div class = "form-group row">
+			 	<%= f.label :price, "税抜価格", class: "col-sm-3" %>
+			 	<%= f.text_field :price, class: "price col-sm-6" %>
+			</div>
 
- <div class = "field">
- 	<%= f.label :name,"商品名" %>
- 	<%= f.text_field :name, class: "name" %>
- </div>
+			<div class = "from-group row">
+			 	<%= f.label :status, "販売ステータス", class: "col-sm-3" %>
+			 	<div class="col-sm-7" style='margin-left: -18px'>
+				 	<%= f.select :status,{"品切れ": 0,"販売中": 1},{include_blank: "選択してください"},{class: 'form-control',required: true} %>
+				</div>
+			</div>
 
- <div class = "field">
- 	<%= f.label :explain, "商品説明" %>
- 	<%= f.text_area :explain, class: "explain" %>
- </div>
-
- <div class = "field">
- 	<%= f.label :genre_id, "ジャンル" %>
- 	<%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: "選択してください"},{class: 'form-control',required: true}%>
- </div>
-
- <div class = "field">
- 	<%= f.label :price, "税抜価格" %>
- 	<%= f.text_field :price, class: "price" %>
- </div>
-
- <div class = "from-group">
- 	<%= f.label :status, "販売ステータス" %>
- 	<%= f.select :status,{"品切れ": 0,"販売中": 1},{include_blank: "選択してください"},{class: 'form-control',required: true} %>
- </div>
-
- <div class = "col-xs-4">
- 	<%= f.submit "新規登録",class:'btn success-btn genre_edit_button' %>
- </div>
-
- <% end %>
-</div>
+			<div class = "col-xs-offset-10">
+			 	<%= f.submit "新規登録",class:'btn success-btn genre_edit_button' %>
+			</div>
+		</div>
+	<% end %>
 </div>
 
 
