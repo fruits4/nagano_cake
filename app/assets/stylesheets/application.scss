@@ -95,7 +95,7 @@ footer {
 
 .orders-field {
 	border-radius: 5px;
-	border: 2px solid;
+	border: 1px solid #3a4660;
 }
 
 .order-complete-logo {
@@ -286,7 +286,6 @@ footer {
 
 .delete-btn {
 	color: #c45c66;
-	border: solid 1px #c45c66;
 }
 
 .delete-btn:hover {
@@ -297,7 +296,6 @@ footer {
 .primary-btn {
 	color: #6389ad;
 	background-color: #fff;
-	border: solid 1px #6389ad;
 }
 
 .primary-btn:hover {
@@ -312,7 +310,7 @@ footer {
 }
 
 .table-color {
-	background-color: #ded2c8;
+	background-color: #e6dad1;
 }
 
 .select select {
@@ -323,6 +321,20 @@ footer {
 	line-height: 1.2em;
 	border-radius: 5px;
 	border: solid 1px #ded2c8;
+	background-image: url(yajirusi.jpg);
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: right 10px center;
+}
+
+.select2 select {
+	font-size: 14px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding: 7px 30px 7px 10px;
+	line-height: 1.2em;
+	border-radius: 5px;
+	border: solid 1px #3a4660;
 	background-image: url(yajirusi.jpg);
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
@@ -446,7 +458,9 @@ footer {
 	border: solid 1px #3a4660;
 }
 
+
 //admin-login
 .admin-login {
 	margin: 0 auto;
 }
+

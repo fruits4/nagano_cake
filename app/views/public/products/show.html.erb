@@ -27,7 +27,9 @@
 					<%= f.hidden_field :costomer_id, :value => current_customer.id %>
 			        <%= f.hidden_field :product_id, :value => @product.id %>
 					<%= f.select :amount, [1,2,3,4,5,6,7,8,9,10], style: 'height: 35px' %>
-					<%= f.submit 'カートに入れる', class: 'btn primary-btn' %>
+					<%= button_tag :type => "submit", :class =>"btn primary-btn" do %>
+						<i class="fas fa-cart-plus"></i>カートに入れる
+					<% end %>
 				<% end %>
 			<% end %>
 		</div>
