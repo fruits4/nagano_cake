@@ -28,17 +28,21 @@
 			<div class="row">
 				<% @products.each do |product| %>
 					<div class="col-xs-3">
-						<div class="osusume_img row">
+						<div class="osusume_img row index_box">
 							<%= link_to public_product_path(product) do %>
-								<%= attachment_image_tag product, :image, :fill, 160, 140, format: "jpg" %>
+								<%= attachment_image_tag product, :image, :fill, 200, 140, format: "jpg" %>
 							<% end %>
+						</div>
 
+						<div class="row item_border">
+							<div class="col-xs-12">
+								<div class="empty_height">　</div>
+								<div class="row">
+									<p class="products_index_name"><span class="name_line"><%= product.name %></span></p>
+								</div>
+								<div class="row index_price">￥<%= (product.price * 1.08).to_i %></div>
+							</div>
 						</div>
-						<div class="row public_price_font_size ">
-							<%= product.name %>
-						</div>
-						<div class="emty_align">　</div>
-						<div class="public_price_font_size row">￥<%= (product.price * 1.08).to_i %></div>
 					</div>
 				<% end %>
 			</div>

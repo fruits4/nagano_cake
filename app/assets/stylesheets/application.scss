@@ -180,41 +180,43 @@ footer {
 
 
 //public/products詳細画面
-.public_price_font_size {
-	font-size: 20px;
-}
 
 .empty_align {
 	margin-top: 5px;
 }
-// OLD DESIGN
-// .pb_products_list {
-// 	position: relative;
-// 	background: #c9af98;
-// 	box-shadow: 0px 0px 0px 5px #c9af98;
-// 	border: dashed 2px white;
-// 	padding: 0.2em 0.5em;
-// 	color: #454545;
-// 	width: 195px;
-// 	height: 200px;
-// 	margin: 10px 10px;
-// }
 
-// .pb_products_list:after {
-// 	position: absolute;
-// 	content: '';
-// 	right: -7px;
-// 	top: -7px;
-// 	border-width: 0 15px 15px 0;
-// 	border-style: solid;
-// 	border-color: #c9af98 #fff #c9af98;
-// 	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
-// }
+//public/index一覧画面
+
+.index_all_item {
+	border: solid 2px #000;
+}
+
+.index_box {
+	width: 200px;
+	height: 140px;
+	box-shadow: 3px 0px 2px;
+}
+
+.index_price {
+	position: absolute;
+	top: -40px;
+	left: 15px;
+	font-size: 18px;
+	color: #fff;
+	background-color: rgba( 80,80,80, 0.5);
+	padding: 3px 6px;
+	border-radius: 0px 10px 10px 0px;
+}
 
 .item_border {
-	border: solid 2px #000;
+	background-color: #efe3d9;
 	width: 200px;
 	height: 60px;
+	box-shadow: 3px 0px 2px;
+}
+
+.empty_height {
+	line-height: 5px;
 }
 
 
@@ -247,6 +249,13 @@ footer {
 .products_index_name {
 	font-size: 16px;
 	text-align: center;
+	color: #3a4660;
+	font-family: "游明朝", YuMincho,;
+	text-shadow: 1.5px 1.5px rgba(255, 255, 255, 0.5);
+}
+
+.name_line {
+	background: linear-gradient(transparent 60%, #ded2c8 0%);
 }
 
 .product_intro {

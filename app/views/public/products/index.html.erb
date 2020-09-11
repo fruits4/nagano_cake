@@ -14,17 +14,19 @@
 		<div class="row">
 			<% @products.each do |product| %>
 				<div class="col-xs-3">
-					<div class="row">
+					<div class="row index_box">
 						<%= link_to attachment_image_tag( product, :image, :fill, 200, 140, format: "jpg" ), public_product_path(product.id) %>
 					</div>
+
 					<div class="row item_border">
 						<div class="col-xs-12">
 							<div class="row">
+								<div class="empty_height">　</div>
 								<%= link_to public_product_path(product.id) do %>
-									<p class="products_index_name"><%= product.name %></p>
+									<p class="products_index_name"><span class="name_line"><%= product.name %></span></p>
 								 <% end %>
 							</div>
-							<div class="row">￥<%= (product.price * 1.08).to_i %></div>
+							<div class="row index_price">￥<%= (product.price * 1.08).to_i %></div>
 						</div>
 					</div>
 					<div class="empty_align">　</div>
