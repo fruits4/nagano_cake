@@ -8,6 +8,7 @@
 				<tr style="background-color: #ded2c8">
 					<th>会員ID</th>
 					<th>名前</th>
+					<th>フリガナ</th>
 					<th>メールアドレス</th>
 					<th>会員ステータス</th>
 				</tr>
@@ -31,5 +32,8 @@
 				<% end %>
 			</tbody>
 		</table>
+		<div>
+		<%= paginate @customers %>
+		</div>
 </div>
 
