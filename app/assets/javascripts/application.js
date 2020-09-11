@@ -50,15 +50,7 @@ $(function() {
 	  });
   	});
 
-  	$('#back a').on('click',function(event){
-	    $('body, html').animate({
-	      scrollTop:0
-	    }, 1000);
-	    event.preventDefault();
-	});
-})
-
-$(function(){
+  $(function(){
     // inputのidから情報の取得
     $('#image').on('change', function (e) {
 // ここから既存の画像のurlの取得
@@ -71,6 +63,14 @@ $(function(){
 });
 });
 
+
+  	$('#back a').on('click',function(event){
+	    $('body, html').animate({
+	      scrollTop:0
+	    }, 1000);
+	    event.preventDefault();
+	});
+})
 
 $(function(){
 
