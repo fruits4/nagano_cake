@@ -11,9 +11,9 @@
 			</div>
 
 			<div class="col-xs-5 products_show_item">
-				<h2><b><%= @product.name %></b></h2>
+				<h2><b class="name_line_show"><%= @product.name %></b></h2>
 				<div class="product_intro"><%= @product.explain %></div>
-				<h3><b>￥<%= (@product.price * 1.08).to_i %><span class="public_price_font_size">(税込)</span></b></h3>
+				<h3><b class="price_marker">￥<%= (@product.price * 1.08).to_i %><span class="public_price_font_size">(税込)</span></b></h3>
 			</div>
 		</div>
 		<div>　　　</div>
