@@ -8,6 +8,7 @@
 				<tr style="background-color: #ded2c8">
 					<th>会員ID</th>
 					<th>名前</th>
+					<th>フリガナ</th>
 					<th>メールアドレス</th>
 					<th>会員ステータス</th>
 				</tr>
@@ -25,7 +26,6 @@
 						</td>
 						<td><%= customer.last_name_kana %><%= customer.first_name_kana %></td>
 						<td><%= customer.email %></td>
-
 						<td>
 						<%= customer.is_deleted ? '退会済' : '会員' %>
 				        </td>
@@ -33,5 +33,8 @@
 				<% end %>
 			</tbody>
 		</table>
+		<div>
+		<%= paginate @customers %>
+		</div>
 </div>
 
