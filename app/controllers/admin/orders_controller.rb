@@ -3,7 +3,15 @@ class Admin::OrdersController < ApplicationController
 	before_action :authenticate_admin!
 
 	def index
-		@orders = Order.where("created_at >= ?", Date.today).all
+		path = Rails.application.routes.recognize_path(request.referer)
+		
+		if path[:controller] == "admin/top" && path[:action] == "top"
+			@orders = Order.where("created_at >= ?", Date.today).all
+		elsif path[:controller] == "admin/customers" && path[:action] == "show"
+			@orders = Order.where(customer_id: path[:id])
+		else
+			@orders = Order.all
+		end
 		@orders = @orders.page(params[:page]).per(20)
 	end
 
