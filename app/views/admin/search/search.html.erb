@@ -1,17 +1,30 @@
 <div class="row">
+	<div class="col-xs-2"></div>
 	<% if @product_or_customer == '1' %>
 		<% if @products.count == 0 %>
 			<h2>該当する検索結果がありません。</h2>
 		<% else %>
 		<h2><%= params[:search] %>の検索結果</h2>
 			<% @products.each do |product| %>
-				<div class="pb_products_list col-xs-3">
-					<div><%= link_to attachment_image_tag( product, :image, :fill, 160, 140, format: "jpg" ), public_product_path(product.id) %></div>
-					<div><%= link_to admin_product_path(product.id) do %>
-							<P class="products_index_name"><%= product.name %></P>
-						 <% end %>
+				<div class="row col-xs-3">
+					<div class="row index_box">
+						<%= link_to attachment_image_tag( product, :image, :fill, 200, 140, format: "jpg" ), public_product_path(product.id) %>
 					</div>
-					<div>￥<%= (product.price * 1.08).to_i %></div>
+
+					<div class="row item_border">
+						<div class="col-xs-12">
+							<div class="row">
+								<div class="empty_height">　</div>
+								<%= link_to admin_product_path(product.id) do %>
+									<P class="products_index_name"><span class="name_line"><%= product.name %></span></P>
+								<% end %>
+								<div class="row index_price">
+									￥<%= (product.price * 1.08).to_i %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="empty_align">　</div>
 				</div>
 			<% end %>
 		<% end %>
