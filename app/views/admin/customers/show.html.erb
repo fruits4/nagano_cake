@@ -58,8 +58,12 @@
 
 </div>
 
-<%= link_to "編集する", edit_admin_customer_path(@customer),  class:"btn primary-btn col-xs-1" %>
-<%= link_to "注文履歴一覧を見る", public_orders_path, class:"btn primary-btn col-xs-2" %>
+
+<%= link_to edit_admin_customer_path(@customer) do %>
+<p class="btn btn-brackets2"><i class="far fa-edit"></i> 編集する</p>
+<% end %>
+
+<%= link_to "注文履歴一覧を見る", admin_orders_path, class: 'customers-btn' %>
 </div>
 </div>
 </div>
