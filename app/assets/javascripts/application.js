@@ -53,10 +53,24 @@ $(function() {
   	$('#back a').on('click',function(event){
 	    $('body, html').animate({
 	      scrollTop:0
-	    }, 800);
+	    }, 1000);
 	    event.preventDefault();
 	});
 })
+
+$(function(){
+    // inputのidから情報の取得
+    $('#image').on('change', function (e) {
+// ここから既存の画像のurlの取得
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $(".img-square").attr('src', e.target.result);
+    }
+// ここまで
+    reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入
+});
+});
+
 
 $(function(){
 
