@@ -1,3 +1,62 @@
-// Place all the styles related to the public::customers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.content {
+	margin-top: 30px;
+}
+
+.mypage-table {
+	margin: 30px 0;
+}
+
+.edit-button {
+	margin-left: 30px;
+}
+
+.customers-btn {
+	border: 1px solid #c9af98;
+	border-radius: 5px;
+	background-color: #efefef;
+	color: #c9af98;
+	padding: 8px 20px;
+	transition: .4s;
+}
+
+.customers-btn:hover {
+	text-decoration: none;
+	color: #fff;
+	background: #ded2c8;
+}
+
+.title-box {
+	display: inline-block;
+}
+
+.shipping-title {
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.mypage-title {
+	display: inline-block;
+}
+
+
+//editページ
+
+.edit-table {
+	margin: 30px 0;
+}
+
+
+//confirmページ
+
+.confirm-message {
+	text-align: center;
+}
+
+.confirm-text {
+	margin: 50px 0;
+	line-height: 4;
+}
+
+.not-withdraw {
+	margin-right: 30px;
+}

@@ -3,7 +3,8 @@ class Admin::OrdersController < ApplicationController
 	before_action :authenticate_admin!
 
 	def index
-		@orders = Order.all
+		@orders = Order.where("created_at >= ?", Date.today).all
+		@orders = @orders.page(params[:page]).per(20)
 	end
 
 	def show
