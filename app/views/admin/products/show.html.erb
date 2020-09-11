@@ -22,6 +22,9 @@
 			<td><%= @product.status ? "販売中" : "在庫なし" %></td>
 		</tr>
 	</table>
-  <%= link_to "編集", edit_admin_product_path(@product), class:"btn primary-btn" %><br>
+	
+  <%= link_to edit_admin_product_path(@product) do %>
+ <p class="btn btn-brackets2"><i class="far fa-edit"></i> 編集する</p>
+  <% end %>
 </div>
 </div>

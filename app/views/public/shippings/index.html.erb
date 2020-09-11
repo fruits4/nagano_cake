@@ -48,8 +48,10 @@
       <td><%= shipping.name %></td>
       <!-- 編集・削除　-->
       <td>
-        <%= link_to '編集する',edit_public_shipping_path(shipping), class: "btn primary-btn" %>
-        <%= link_to '削除する', public_shipping_path(shipping),class: "btn delete-btn", method: :delete, 'data-confirm' => '本当に削除しますか？' %>
+        <%= link_to edit_public_shipping_path(shipping) do %>
+        <p class="btn btn-brackets2"><i class="far fa-edit"></i> 編集する</p>
+        <% end %>
+        <%= link_to '削除する', public_shipping_path(shipping),class: "btn btn-brackets pull-right", method: :delete, 'data-confirm' => '本当に削除しますか？' %>
       </td>
     </tr>
     <% end %>
