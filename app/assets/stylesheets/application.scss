@@ -187,36 +187,45 @@ footer {
 
 
 //public/products詳細画面
-.public_price_font_size {
-	font-size: 20px;
-}
 
 .empty_align {
 	margin-top: 5px;
 }
 
-.pb_products_list {
-	position: relative;
-	background: #fff0cd;
-	box-shadow: 0px 0px 0px 5px #fff0cd;
-	border: dashed 2px white;
-	padding: 0.2em 0.5em;
-	color: #454545;
-	width: 195px;
-	height: 200px;
-	margin: 10px 10px;
+//public/index一覧画面
+
+.index_all_item {
+	border: solid 2px #000;
 }
 
-.pb_products_list:after {
-	position: absolute;
-	content: '';
-	right: -7px;
-	top: -7px;
-	border-width: 0 15px 15px 0;
-	border-style: solid;
-	border-color: #ffdb88 #fff #ffdb88;
-	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+.index_box {
+	width: 200px;
+	height: 140px;
+	box-shadow: 3px 0px 2px;
 }
+
+.index_price {
+	position: absolute;
+	top: -40px;
+	left: 15px;
+	font-size: 18px;
+	color: #fff;
+	background-color: rgba( 80,80,80, 0.5);
+	padding: 3px 6px;
+	border-radius: 0px 10px 10px 0px;
+}
+
+.item_border {
+	background-color: #efe3d9;
+	width: 200px;
+	height: 60px;
+	box-shadow: 3px 0px 2px;
+}
+
+.empty_height {
+	line-height: 5px;
+}
+
 
 .under_bar {
 	margin: 20px auto;
@@ -246,6 +255,14 @@ footer {
 
 .products_index_name {
 	font-size: 16px;
+	text-align: center;
+	color: #3a4660;
+	font-family: "游明朝", YuMincho,;
+	text-shadow: 1.5px 1.5px rgba(255, 255, 255, 0.5);
+}
+
+.name_line {
+	background: linear-gradient(transparent 60%, #ded2c8 0%);
 }
 
 .product_intro {
@@ -461,6 +478,10 @@ footer {
 
 //admin-login
 .admin-login {
-	margin: 0 auto;
+	text-align: center;
+}
+
+.login-title {
+	margin-bottom: 20px;
 }
 
