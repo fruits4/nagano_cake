@@ -2,7 +2,7 @@
 	<div class="row">
 		<h2>注文履歴一覧</h2>
 		<table class="table ordered-table">
-			<thead>
+			<thead class="table-color">
 				<tr class="table-color">
 					<th>購入日時</th>
 					<th>購入者</th>
@@ -18,8 +18,7 @@
 						<% end %>
 					</td>
 					<td><%= order.customer.last_name %></td>
-					<td><%= order.total_amount %></td>
-					<td><%= order.status %></td>
+					<td><%= order.total_amount %>　<%= order.status %></td>
 				</tr>
 			</tbody>
 			<% end %>
