@@ -1,27 +1,30 @@
 <div class = "row">
+	<h2>商品詳細</h2>
 	<div class = "col-xs-5">
 		<%= attachment_image_tag(@product, :image, size: '200x200') %>
 	</div>
 
-<div class = "col-7-xs">
-	<table>
-		<tr>
-			<th>商品名</th>
-			<td><%= @product.name %></td>
-		</tr>
-		<tr>
-			<th>商品説明</th>
-			<td><%= @product.explain %></td>
-		</tr>
-		<tr>
-			<th>税込価格（税抜価格）</th>
-			<td><%= (@product.price * 1.08).to_i %>（<%= @product.price %>）円</td>
-		</tr>
-		<tr>
-			<th>販売ステータス</th>
-			<td><%= @product.status ? "販売中" : "在庫なし" %></td>
-		</tr>
-	</table>
+<div class = "col-xs-7">
+
+	<div class = "form-group row">
+		<p class = "col-sm-3" >商品名</p>
+		<p><%= @product.name %></p>
+    </div>
+	
+	<div class = "form-group row">
+			<p class = "col-sm-3">商品説明</p>
+			<p><%= @product.explain %></p>
+	</div>
+
+	<div class = "form-group row">
+			<p class = "col-sm-3">税込価格（税抜価格）</p>
+			<p><%= (@product.price * 1.08).to_i %>（<%= @product.price %>）円</p>
+	</div>
+	
+	<div class = "form-group row">
+			<p class = "col-sm-3">販売ステータス</p>
+			<p><%= @product.status ? "販売中" : "在庫なし" %></p>
+	</div>
 	
   <%= link_to edit_admin_product_path(@product) do %>
  <p class="btn btn-brackets2"><i class="far fa-edit"></i> 編集する</p>
