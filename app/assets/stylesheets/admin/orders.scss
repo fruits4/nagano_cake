@@ -5,3 +5,22 @@
 .orders-table {
 	margin-top: 30px;
 }
+
+.title {
+	display: inline-block;
+}
+
+.cost-table-title {
+	width: 140px;
+	height: 30px;
+}
+
+.box {
+	position: relative;
+}
+
+.cost-table {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
