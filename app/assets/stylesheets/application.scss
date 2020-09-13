@@ -197,7 +197,7 @@ footer {
 .index_box {
 	width: 200px;
 	height: 140px;
-	box-shadow: 3px 0px 2px;
+	box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.5);
 }
 
 .index_price {
@@ -215,7 +215,7 @@ footer {
 	background-color: #efe3d9;
 	width: 200px;
 	height: 60px;
-	box-shadow: 3px 0px 2px;
+	box-shadow: 3px 0px 2px rgba(0, 0, 0, 0.5);
 }
 
 .empty_height {
@@ -230,24 +230,24 @@ footer {
 
 .products_show_item {
 	position: relative;
-	background: #fff0cd;
-	box-shadow: 0px 0px 0px 5px #fff0cd;
-	border: dashed 2px white;
+	background: #fff;
+	box-shadow: 0px 0px 0px 5px #fff;
+	border: dashed 2px #71add4;
 	padding: 0.2em 0.5em;
 	color: #454545;
 	margin: 10px 10px;
 }
 
-.products_show_item:after {
-	position: absolute;
-	content: '';
-	right: -7px;
-	top: -7px;
-	border-width: 0 15px 15px 0;
-	border-style: solid;
-	border-color: #ffdb88 #fff #ffdb88;
-	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
-}
+// .products_show_item:after {
+// 	position: absolute;
+// 	content: '';
+// 	right: -7px;
+// 	top: -7px;
+// 	border-width: 0px 15px 15px 0px;
+// 	border-style: solid;
+// 	border-color: #fff  #71add4 #fff;
+// 	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+// }
 
 .products_index_name {
 	font-size: 16px;
@@ -257,12 +257,68 @@ footer {
 	text-shadow: 1.5px 1.5px rgba(255, 255, 255, 0.5);
 }
 
+//show
+.product_name_pr {
+	text-align: center;
+    position: relative;
+    padding: 0.5em 0.7em;
+    background: #eee2d8;
+    font-weight: bold;
+}
+.product_name_pr:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 30px;
+    border: 15px solid transparent;
+    border-top: 15px solid #eee2d8;
+    width: 0;
+    height: 0;
+}
+
 .name_line {
 	background: linear-gradient(transparent 60%, #ded2c8 0%);
 }
 
+.name_line_show {
+	color: #3a4660;
+	font-family: "游明朝", YuMincho,;
+	text-shadow: 1.5px 1.5px rgba(255, 255, 255, 0.5);
+	// background: linear-gradient(transparent 60%, #ded2c8 0%);
+}
+
+.price_marker {
+	background: linear-gradient(transparent 60%, #fa0000 0%);
+	text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+.show_price {
+	font-size: 34px;
+	color: #3a4660;
+}
+
+.zeikomi_size {
+	font-size: 17px;
+}
+
+.empty_100 {
+	padding-top: 130px;
+}
+
 .product_intro {
-	height: 80px;
+	height: 200px;
+	font-size: 20px;
+	color: #3a4660;
+	padding-left: 10px;
+	background: linear-gradient(#ccc 1px transparent 1px) #fff;
+	line-height: 1.5em;
+}
+
+.product_img_border {
+	border: solid 4px #82636b;
+	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+	margin: 2em 0;
+	padding: 1.5em;
 }
 
 .tyuui_zeikomi {
