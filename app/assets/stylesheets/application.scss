@@ -257,6 +257,25 @@ footer {
 	text-shadow: 1.5px 1.5px rgba(255, 255, 255, 0.5);
 }
 
+//show
+.product_name_pr {
+	text-align: center;
+    position: relative;
+    padding: 0.5em 0.7em;
+    background: #eee2d8;
+    font-weight: bold;
+}
+.product_name_pr:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 30px;
+    border: 15px solid transparent;
+    border-top: 15px solid #eee2d8;
+    width: 0;
+    height: 0;
+}
+
 .name_line {
 	background: linear-gradient(transparent 60%, #ded2c8 0%);
 }
@@ -265,18 +284,41 @@ footer {
 	color: #3a4660;
 	font-family: "游明朝", YuMincho,;
 	text-shadow: 1.5px 1.5px rgba(255, 255, 255, 0.5);
-	background: linear-gradient(transparent 60%, #ded2c8 0%);
+	// background: linear-gradient(transparent 60%, #ded2c8 0%);
 }
 
 .price_marker {
 	background: linear-gradient(transparent 60%, #fa0000 0%);
+	text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
 }
 
+.show_price {
+	font-size: 34px;
+	color: #3a4660;
+}
+
+.zeikomi_size {
+	font-size: 17px;
+}
+
+.empty_100 {
+	padding-top: 130px;
+}
 
 .product_intro {
-	height: 80px;
-	font-size: 18px;
+	height: 200px;
+	font-size: 20px;
+	color: #3a4660;
 	padding-left: 10px;
+	background: linear-gradient(#ccc 1px transparent 1px) #fff;
+	line-height: 1.5em;
+}
+
+.product_img_border {
+	border: solid 4px #82636b;
+	border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+	margin: 2em 0;
+	padding: 1.5em;
 }
 
 .tyuui_zeikomi {

@@ -6,14 +6,17 @@
 
 	<div class="col-xs-9">
 		<div class="row">
-			<div class="col-xs-4 products_show_item">
-				<%= attachment_image_tag @product, :image, :fill, 240, 200, format: "jpg" %>
+			<div class="col-xs-6">
+				<h2 class="product_name_pr"><b class="name_line_show"><%= @product.name %></b></h2>
+				<%= attachment_image_tag @product, :image, :fill, 360, 270, format: "jpg", class: "product_img_border" %>
 			</div>
 
-			<div class="col-xs-5 products_show_item">
-				<h2><b class="name_line_show"><%= @product.name %></b></h2>
-				<div class="product_intro"><%= @product.explain %></div>
-				<h3><b class="price_marker">￥<%= (@product.price * 1.08).to_i %><span class="public_price_font_size">(税込)</span></b></h3>
+			<div class="col-xs-5">
+				<div class="intro_border">
+					<div class="empty_100">　</div>
+					<div class="product_intro"><%= @product.explain %></div>
+				</div>
+				<div class="show_price"><b class="price_marker">￥<%= (@product.price * 1.08).to_i %> </b><span class="zeikomi_size">(税込)</span></div>
 			</div>
 		</div>
 		<div>　　　</div>
