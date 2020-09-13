@@ -1,7 +1,6 @@
 <div class="container box">
 	<div class="row">
 		<h2>注文履歴詳細</h2>
-
 		<div class="ordered-table">
 			<%= form_with model: @order, local: true, url: admin_order_path(@order), method: :patch do |f| %>
 				<div class="form-group">
@@ -68,7 +67,7 @@
 						<td><%= orderd_product.amount %></td>
 						<td>
 							<% total_price = taxed_price * orderd_product.amount %>
-							<% sum = total_price %>
+							<% sum += total_price %>
 							<%= total_price.to_i %>
 						</td>
 						<%= form_with model: orderd_product, local: true, url: admin_orderd_product_path, method: :patch do |f| %>
