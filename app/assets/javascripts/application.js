@@ -26,6 +26,13 @@ $(function() {
       }
     });
 
+    $('#back a').on('click',function(event){
+        $('body, html').animate({
+          scrollTop:0
+        }, 1000);
+        event.preventDefault();
+    });
+
     $("#theTarget").skippr({
 	    // スライドショーの変化 ("fade" or "slide")
 	    transition : 'fade',
@@ -48,7 +55,6 @@ $(function() {
 	    // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
 	    hidePrevious : false,
 	  });
-  	});
 
   $(function(){
     // inputのidから情報の取得
@@ -61,15 +67,9 @@ $(function() {
 // ここまで
     reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入
 });
-});
 
 
-  	$('#back a').on('click',function(event){
-	    $('body, html').animate({
-	      scrollTop:0
-	    }, 1000);
-	    event.preventDefault();
-	});
+
 })
 
 $(function(){
@@ -116,5 +116,8 @@ $(function(){
         });
     });
 
+});
+
+});
 });
 
