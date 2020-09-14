@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="col-xs-3">
+		<%= render 'side_genre' %>
+	</div>
+	<div class="col-xs-9">
+		<h2 class="row">
+			<% if @genre.present? %>
+				<%= @genre.name %>一覧(全<%= @products.count %>件)<span class="tyuui_zeikomi">*価格はすべて税込価格です。</span>
+			<% else %>
+				商品一覧(全<%= @pdcount.count %>件)<span class="tyuui_zeikomi">*価格はすべて税込価格です。</span>
+			<% end %>
+		</h2>
+		<div class="row empty_align">　</div>
+		<div class="row">
+			<% @products.each do |product| %>
+				<div class="col-xs-3">
+					<div class="row index_box">
+						<%= link_to attachment_image_tag( product, :image, :fill, 200, 140, format: "jpg" ), public_product_path(product.id) %>
+					</div>
+
+					<div class="row item_border">
+						<div class="col-xs-12">
+							<div class="row">
+								<div class="empty_height">　</div>
+								<%= link_to public_product_path(product.id) do %>
+									<p class="products_index_name"><span class="name_line"><%= product.name %></span></p>
+								 <% end %>
+							</div>
+							<div class="row index_price">￥<%= (product.price * 1.08).to_i %></div>
+						</div>
+					</div>
+					<div class="empty_align">　</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="row under_bar">
+			<div class="col-xs-2"></div>
+			<div class="col-xs-3">
+				<%= paginate @products %>
+			</div>
+
+		</div>
+	</div>
+</div>

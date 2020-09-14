@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-xs-2">
+  </div>
+  <div class="col-xs-10 new_customer_text_config">
+    <div class="row">
+      <h3 class="">新規会員登録</h3>
+    </div>
+    <div class="empty_align">　</div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "customers/shared/error_messages", resource: resource %>
+      <div class="row customer_font_sizing">
+        <p class="col-xs-3">名前</p>
+        <div class="col-xs-1">(姓)</div>
+        <div class="col-xs-3"><%= f.text_field :last_name, :placeholder => "例）山田" %></div>
+        <div class="col-xs-1">(名)</div>
+        <div class="col-xs-3"><%= f.text_field :first_name, :placeholder => "太郎" %></div>
+      </div>
+
+      <div class="row customer_font_sizing">
+        <p class="col-xs-3">フリガナ</p>
+        <div class="col-xs-1">(セイ)</div>
+        <div class="col-xs-3"><%= f.text_field :last_name_kana, :placeholder => "ヤマダ" %></div>
+        <div class="col-xs-1">(メイ)</div>
+        <div class="col-xs-3"><%= f.text_field :first_name_kana, :placeholder => "タロウ" %></div>
+      </div>
+
+      <div class="row customer_font_sizing">
+        <p class="col-xs-4">メールアドレス</p>
+        <div class="col-xs-3"><%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "yamada@example.com"%></div>
+      </div>
+
+      <div class="row customer_font_sizing">
+        <p class="col-xs-4">郵便番号(ハイフンなし)</p>
+        <div class="col-xs-3"><%= f.text_field :post_code, :placeholder => "1234567", id: "postcode" %></div>
+      </div>
+
+      <div class="row customer_font_sizing">
+        <p class="col-xs-4">住所</p>
+        <div clasS="col-xs-8"><%= f.text_field :address, class: "col-xs-10", :placeholder => "東京都杉並区1-1-1　グランドハイム西川", id: "address" %></div>
+      </div>
+
+      <div class="row customer_font_sizing">
+        <p class="col-xs-4">電話番号(ハイフンなし)</p>
+        <div class="col-xs-8"><%= f.text_field :phone_number, :placeholder => "09012345678" %></div>
+      </div>
+
+      <div class="row customer_font_sizing">
+        <p class="col-xs-4">パスワード(6文字以上)</p>
+        <div class="col-xs-8"><%= f.password_field :password, autocomplete: "new-password", :placeholder => "6文字以上" %></div>
+      </div>
+
+      <div class="row customer_font_sizing">
+        <p class="col-xs-4">パスワード(確認用)</p>
+        <div class="col-xs-8"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></div>
+      </div>
+      <div class="row empty_align">　</div>
+      <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-8"><%= f.submit "新規登録", class: 'btn success-btn btn_pad' %></div>
+      </div>
+  </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-xs-2">
+  </div>
+  <div class="col-xs-10">
+    <h3>すでに登録済の方</h3>
+    <div class="empty_align">　</div>
+    <div class="row">
+      <div class="col-xs-1"></div>
+      <p class="col-xs-11"><%= link_to "こちら", new_customer_session_path %>からログインしてください。</p>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class = "row">
+	<h2>会員一覧</h2>
+</div>
+<div class="empty_align">　</div>
+<div class = "col-xs-10">
+		<table class = "table table-hover">
+			<thead>
+				<tr style="background-color: #ded2c8">
+					<th>会員ID</th>
+					<th>名前</th>
+					<th>フリガナ</th>
+					<th>メールアドレス</th>
+					<th>会員ステータス</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @customers.each do |customer| %>
+					<tr>
+						<td><%= customer.id %></td>
+						<td>
+							<%= link_to admin_customer_path(customer) do %>
+							<%= customer.last_name %>
+							<%= customer.first_name %>
+							<% end %>
+						</td>
+						<td><%= customer.last_name_kana %><%= customer.first_name_kana %></td>
+						<td><%= customer.email %></td>
+						<td>
+						<%= customer.is_deleted ? '退会済' : '会員' %>
+				        </td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<div>
+		<%= paginate @customers %>
+		</div>
+</div>
+

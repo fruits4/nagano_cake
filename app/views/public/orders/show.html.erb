@@ -1,0 +1,76 @@
+<div class="row">
+	<h2 class="col-xs-offset-2">注文履歴詳細</h2>
+</div>
+<div class="row">
+	<div class="col-xs-7">
+		<h4><strong>注文情報</strong></h4>
+		<table class="table table-bordered">
+			<tr>
+				<th class="table-color col-xs-2">注文日</th>
+				<td><%= @order.created_at.strftime("%Y/%m/%d") %></td>
+			</tr>
+			<tr>
+				<th class="table-color">配送先</th>
+				<td>
+					〒 <%= @order.post_code %><br>
+					<%= @order.address %><br>
+					<%= @order.name %>
+				</td>
+			</tr>
+			<tr>
+				<th class="table-color">支払い方法</th>
+				<td><%= @order.payment %></td>
+			</tr>
+			<tr>
+				<th class="table-color">ステータス</th>
+				<td><%= @order.status %></td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-4">
+		<h4><strong>請求情報</strong></h4>
+		<table class="table table-bordered">
+			<tr>
+				<th class="table-color">商品合計</th>
+				<td><%= @order_price.to_i %>円</td>
+			</tr>
+			<tr>
+				<th class="table-color">配送料</th>
+				<td><%= @order.shipping_cost %>円</td>
+			</tr>
+			<tr>
+				<th class="table-color">ご請求額</th>
+				<td><%= @order.total_price %>円</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-8">
+		<h4><strong>注文内容</strong></h4>
+		<table class="table table-bordered">
+			<tr class="table-color">
+				<th>商品</th>
+				<th>単価（税込）</th>
+				<th>個数</th>
+				<th>小計</th>
+			</tr>
+			<% @orderd_products.each do |orderd_product| %>
+			<tr>
+				<td>
+					<%= attachment_image_tag orderd_product.product, :image, :fill, 40, 40 %>
+					<%= orderd_product.product.name %>
+				</td>
+				<td>
+					<% tax = orderd_product.product.price * 1.08 %>
+					<%= tax.to_i %>円
+				</td>
+				<td><%= orderd_product.amount %>個</td>
+				<td>
+					<% subtotal = tax * orderd_product.amount %>
+					<%= subtotal.to_i %>円
+				</td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
+

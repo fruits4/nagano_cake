@@ -1,0 +1,77 @@
+<% if @cart_items.count == 0 %>
+	<h4>カートが空です</h4>
+<% else %>
+	<div class="row">
+		<div class="col-xs-offset-9 col-xs-3">
+			<%= link_to destroy_all_public_cart_items_path(@cart_items), method: :delete do %>
+				<p class="btn btn-brackets"><i class="fas fa-trash-alt"></i>カートを空にする</p>
+			<% end %>
+		</div>
+	</div>
+	<h2>カート内アイテム一覧画面</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr class="table-color">
+				<th>商品名</th>
+				<th>単価（税込）</th>
+				<th>数量</th>
+				<th>小計</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% sum = 0 %>
+			<% @cart_items.each do |cart_item| %>
+			<tr>
+				<td>
+					<%= attachment_image_tag cart_item.product, :image, :fill, 40, 40 %>
+					<%= cart_item.product.name %>
+				</td>
+				<td style="padding-top: 15px">
+					<% tax = cart_item.product.price * 1.08 %>
+					<%= tax.to_i %>円
+				</td>
+				<%= form_for cart_item, url: public_cart_item_path(cart_item) do |f| %>
+					<td style="padding-top: 10px">
+						<%= f.text_field :amount, size:'3', style:"border: solid 1px #ded2c8; height:28px" %>
+						<%= f.submit '変更', class: 'btn primary-btn btn-sm' %>
+					</td>
+				<% end %>
+				<td  style="padding-top: 15px">
+					<% price = cart_item.amount * tax %>
+					<%= price.to_i %>円
+				</td>
+				<td style="padding-top: 10px">
+					<%= link_to public_cart_item_path(cart_item), method: :delete do %>
+						<p class="btn delete-btn btn-sm">削除</p>
+					<% end %>
+				</td>
+			</tr>
+			<% sum += price %>
+			<% end %>
+		</tbody>
+	</table>
+	<div class="row">
+		<div class="col-xs-2">
+			<%= link_to public_path do %>
+				<p class="btn btn-brackets2"><i class="fas fa-cart-plus"></i>買い物を続ける</p>
+			<% end %>
+		</div>
+		<div class="col-xs-offset-9 col-xs-3">
+			<table class="table table-bordered">
+				<tr>
+					<th class="table-color">合計金額</th>
+					<td><%= sum.to_i %>円</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="text-center">
+			<%= link_to new_public_order_path do%>
+				<p class="btn success-btn btn-lg btn-square-shadow">情報入力に進む</p>
+			<% end %>
+		</div>
+	</div>
+<% end %>

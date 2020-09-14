@@ -1,15 +1,130 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NaganoCake</title>
+    <%= favicon_link_tag 'favicon.ico' %>
+  <title>ながのCake</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/18f4d5da3c.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar">
+      <div class="container">
+        <div class = "a">
+        <%= link_to public_path, :style=>"color:#e6e6fa;""text-decoration:none;" do %>
+        <img class = "logo", src="/assets/logo.png", width="70px", height="70px">
+           <span class="header-logo">長野Cake</span>
+        <% end %>
+      </div>
+        <ul class="nav navbar-nav navbar-right nav-hover">
+          <% if customer_signed_in?%>
+            <li class="nav-item nav-name header-item">
+              <span>ようこそ<%= current_customer.last_name %><%= current_customer.first_name %>さん</span>
+            </li>
+            <li class="nav-item">
+              <%= link_to my_page_public_customers_path, class: " header-item" do %>
+                <span>マイページ</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to public_products_path, class: " header-item" do %>
+                <span>商品一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to public_cart_items_path, class: " header-item" do %>
+                <span>カート</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_customer_session_path, method: :delete, class: " header-item" do %>
+                <span>ログアウト</span>
+              <% end %>
+            </li>
+
+          <% elsif admin_signed_in? %>
+            <li class="nav-item">
+              <%= link_to admin_products_path, class: " header-item" do %>
+                <span>商品一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_customers_path, class: " header-item" do %>
+                <span>会員一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_orders_path, class: " header-item" do %>
+                <span>注文履歴一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_genres_path, class: " header-item" do %>
+                <span>ジャンル一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_admin_session_path, method: :delete, class: " header-item" do %>
+                <span>ログアウト</span>
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to about_path, class: " header-item" do %>
+                <span>About</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to public_products_path, class: " header-item" do %>
+                <span>商品一覧</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_customer_registration_path, class: " header-item" do %>
+                <span>新規登録</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_customer_session_path, class: " header-item" do %>
+                <span>ログイン</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <% if admin_signed_in? %>
+          <div class="pull-right">
+            <%= form_tag(admin_serch_path, method: :get) do %>
+                <div class="input-group mb-3">
+                  <span class="text-danger"><%= flash[:search] %></span>
+                  <%= select_tag(:model, options_for_select([["商品", "1"], ["顧客", "2"]]), style: 'height:26px;') %>
+                  <%= text_field_tag :search %>
+                  <%= button_tag "", class: "search-button" do %>
+                  <i class="fas fa-search"></i>
+                </div>
+                <% end %>
+            <% end %>
+          </div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </main>
+    <span id="back">
+      <a href="#">
+        <i class="fas fa-hand-point-up"></i>
+      </a>
+    </span>
+
+    <footer>
+      <p>Nagano cake co.,ltd.©</p>
+    </footer>
   </body>
 </html>

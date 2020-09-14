@@ -1,0 +1,87 @@
+//about
+
+.about-box {
+	text-align: center;
+}
+
+.title-border {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.title-border:before{
+	margin-right: 10px;
+	border-top: 1px solid #3a4660;
+	content: "";
+	width: 100px;
+}
+
+.title-border:after{
+	margin-left: 10px;
+	border-top: 1px solid #3a4660;
+	content: "";
+	width: 100px;
+}
+
+.about-text {
+	font-size: 16px;
+	margin-top: 20px;
+	line-height: 6;
+	font-family: "游明朝", YuMincho,;
+}
+
+.bottom {
+	margin-bottom: 100px;
+}
+
+.ex1 {
+	width: 85%;
+	margin: 0 auto;
+	padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.ex1 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    background-color: #e45151;
+}
+
+.sweet1 {
+	background-image: url(/assets/sweet1.jpg);
+	background-size: cover;
+	background-repeat:  no-repeat;
+	background-position: center;
+}
+
+.sweet2 {
+	background-image: url(/assets/sweet2.jpg);
+	background-size: cover;
+	background-repeat:  no-repeat;
+	background-position: center;
+}
+
+.sweet3 {
+	background-image: url(/assets/sweet3.jpg);
+	background-size: cover;
+	background-repeat:  no-repeat;
+	background-position: center;
+}
+
+.sweet4 {
+	background-image: url(/assets/sweet4.jpg);
+	background-size: cover;
+	background-repeat:  no-repeat;
+	background-position: center;
+}
+
+.sweet5 {
+	background-image: url(/assets/sweet5.jpg);
+	background-size: cover;
+	background-repeat:  no-repeat;
+	background-position: center;
+}

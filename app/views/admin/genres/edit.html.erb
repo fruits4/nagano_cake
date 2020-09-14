@@ -1,0 +1,15 @@
+<h2>ジャンル情報編集</h2>
+<div class="empty_align">　</div>
+<div class="row">
+	<%= form_with model: @genre, url: admin_genre_path, local: true do |f| %>
+	<div class="col-xs-6">
+		<%= f.label "ジャンル" %>
+		<%= f.text_field :name %>
+		<%= f.radio_button :is_active, :true, checked: true %>
+		<%= f.label :status, "有効" %>
+		<%= f.radio_button :is_active, :false %>
+		<%= f.label :status, "無効" %>
+		<%= f.submit "編集を保存", class: "btn success-btn"%>
+	</div>
+	<% end %>
+</div>

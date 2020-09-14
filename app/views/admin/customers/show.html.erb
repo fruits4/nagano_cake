@@ -1,0 +1,74 @@
+<div class="container">
+<div class = "row">
+<h2><%= @customer.last_name %> <%= @customer.first_name %>さんの会員詳細</h2>
+<div class = "row mt-3">
+<div class="offset-sm-1 col-sm-7">
+
+<table class="table table-borderless">
+  <tbody>
+	<tr>
+		<th>顧客ID</th>
+<!--------------------- 機能追加 --------------------->
+		<td>
+			<%= @customer.id %>
+		</td>
+		<td>
+			<%= @customer.is_deleted ? '退会済' : '会員' %>
+		</td>
+	</tr>
+	<tr>
+	    <th>氏名</th>
+		<td>
+		<%= @customer.last_name %> <%= @customer.first_name %>
+	    </td>
+	    <td></td>
+	</tr>
+
+	<tr>
+		<th>フリガナ</th>
+		<td>
+		<%= @customer.last_name_kana %> <%= @customer.first_name_kana %>
+	    </td>
+	    <td></td>
+	</tr>
+	<tr>
+		<th>郵便番号</th>
+		<td><%= @customer.post_code %></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>住所</th>
+		<td><%= @customer.address %></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>電話番号</th>
+		<td><%= @customer.phone_number %></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>メールアドレス</th>
+		<td><%= @customer.email %></td>
+		<td></td>
+	</tr>
+  </tbody>
+</table>
+</div>
+<div class = "row">
+
+</div>
+
+
+<%= link_to edit_admin_customer_path(@customer) do %>
+<p class="btn btn-brackets2"><i class="far fa-edit"></i> 編集する</p>
+<% end %>
+
+<%= link_to "注文履歴一覧を見る", admin_orders_path(order_sort: 1), class: 'customers-btn' %>
+</div>
+</div>
+</div>
+
+
+
+
+

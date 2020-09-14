@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col-xs-5">　</div>
+
+	<div class="col-xs-7">
+		<h2>ジャンル登録フォーム</h2>
+		<div class="empty_align">　</div>
+		<div class="row">
+			<div class="col-xs-1"></div>
+			<%= form_with model: @genre, url: admin_genres_path, local: true do |f| %>
+			<div><%= f.text_field :name %></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1"></div>
+			<div>
+				<%= f.radio_button :is_active, :true, checked: true %>
+				<%= f.label :status, "有効" %>
+				<%= f.radio_button :is_active, :false %>
+				<%= f.label :status, "無効" %>
+			</div>
+		<div>
+			<div class="col-xs-1"></div>
+			<%= f.submit "ジャンル登録", class: "btn success-btn "%>
+		</div>
+			<% end %>
+		</div>
+		<div class="empty_align">　</div>
+		<h2>ジャンル一覧</h2>
+		<div class="empty_align">　</div>
+		<table class="row">
+			<tr class="admin_genre_head table-color">
+				<th class="col-xs-1">ジャンル</th>
+				<th class="col-xs-1">状態</th>
+				<th class="col-xs-3"></th>
+			</tr>
+
+			<% @genres.each do |genre| %>
+			<tr class="admin_genre_body">
+				<td class="col-xs-1 genre_td"><%= genre.name %></td>
+				<td class="col-xs-1 genre_td">
+					<%= genre.is_active?? '有効' : '無効' %>
+				</td>
+				<td class="col-xs-3 genre_td">
+					<%= link_to "編集する", edit_admin_genre_path(genre.id), class: 'btn success-btn genre_edit_button' %>
+				</td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</div>

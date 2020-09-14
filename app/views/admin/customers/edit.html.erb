@@ -1,0 +1,62 @@
+<div class="container">
+
+<h2><%= @customer.last_name %> <%= @customer.first_name %>さんの会員編集</h2>
+
+<%= form_for(@customer, url: admin_customer_path) do |f| %>
+
+<table>
+
+ <tr>
+	  <th>会員ID</th>
+	  <td><%= @customer.id %></td>
+ </tr>
+
+ <tr>
+	  <th>氏名</th>
+	  <td>
+	  <%= f.text_field :last_name %>
+	  <%= f.text_field :first_name %>
+	  </td><br>
+ </tr>
+
+ <tr>
+      <th>フリガナ</th>
+      <td>
+      <%= f.text_field :last_name_kana %>
+      <%= f.text_field :first_name_kana %>
+      </td>
+ </tr>
+
+ <tr>
+ 	  <th>郵便番号</th>
+ 	  <td><%= f.text_field :post_code %></td>
+ </tr>
+
+ <tr>
+ 	  <th>住所</th>
+ 	  <td><%= f.text_field :address %></td>
+ </tr>
+
+ <tr>
+ 	 <th>電話番号</th>
+ 	 <td><%= f.telephone_field :phone_number %></td>
+ </tr>
+
+ <tr>
+ 	 <th>メールアドレス</th>
+ 	 <td><%= f.text_field :email %></td>
+ </tr>
+
+ <tr>
+ 	 <th>会員ステータス</th>
+ 	 <td>
+ 	 <label><%= f.radio_button :is_deleted, false %>有効</label>
+ 	 <label><%= f.radio_button :is_deleted, true %>退会済</label>
+ 	</td>
+ </tr>
+</table>
+
+ <%= f.submit "変更を保存する", class:"btn success-btn" %>
+
+<% end %>
+</div>
