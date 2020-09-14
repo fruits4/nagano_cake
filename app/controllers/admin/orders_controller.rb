@@ -5,19 +5,13 @@ class Admin::OrdersController < ApplicationController
 	def index
 		case params[:order_sort]
 		when "0"
-		  dt = DateTime.now;
-		  @orders = Order.where(:created_at[3] == dt.day)
-		  @sin = 0
+		 @orders = Order.where(created_at: Time.zone.today.all_day).order(created_at: "DESC").page(params[:page]).per(20)
 		when "1"
-		  @customer = Customer.find(params[:customer_id])
-		  @orders = @customer.orders
-		  @sin = 1
+		  @customer = Customer.find(params[:id])
+		  @orders = @customer.orders.page(params[:page]).per(20)
 		else
-		  @orders = Order.all
-		  @sin = 2
+		  @orders = Order.all.page(params[:page]).per(20)
 		end
-		@orders = @orders.page(params[:page]).per(20)
-
 	end
 
 	def show
